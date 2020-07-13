@@ -1,7 +1,175 @@
-﻿
+﻿@model maintenanceApplication.Models.Maintenance.MaintenanceModel
+
 @{
-    ViewBag.Title = "TechnicalReport";
+    ViewBag.Title = "Technical Report";
 }
 
-<h2>TechnicalReport</h2>
+<style>
+    .bill-paragraph {
+        background-color: #ff0000;
+        padding: 2%;
+        color: #FFF;
+        text-align: right;
+        font-weight: bold;
+        font-size: 24px;
+    }
 
+    .bill-footer {
+        background-color: #c8c8c8;
+        padding: 1%;
+        color: #FFF;
+        text-align: right;
+        font-weight: bold;
+        font-size: 20px;
+    }
+</style>
+
+<div class="col-md-9">
+    @using (Html.BeginForm("serachDeliveredReport", "Report"))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="col-md-3"></div>
+        <div class="col-md-6" style="margin-bottom:50px;">
+            <h2 class="text-primary text-center" style="margin-bottom:20px;">Print Deliver Report</h2>
+            @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col-md-4"></div>
+            <input type="submit" name="search" class="btn btn-primary col-md-3" style="margin-top:10px;" value="search" id="search"
+                   formaction="/Report/ReparingCheq" formmethod="post" />
+        </div>
+    }
+
+</div>
+
+
+<div id="bill_print" class="a">
+    <div>
+        <div style="float:left;margin-left:4%;margin-top:10px;">
+            <div class="text-left">
+                <h3 class="text-center" style="font-family:Calibri;font-weight:bold;font-size:30px;">إيصال تصليح</h3>
+                <h3 class="text-left" style="font-family:sans-serif;font-weight:bold;margin-top:-5px;">Repair Recipe</h3>
+            </div>
+            <div class="text-left">
+                <h3 class="text-left" style="font-family:Calibri;font-weight:bold;font-size:20px;">للتواصل مع مركز الصيانة</h3>
+                <h3 class="text-left" style="margin-left:7%;font-family:sans-serif;font-weight:bold;font-size:20px;font-family:sans-serif;margin-top:-5px;">+971523614830</h3>
+            </div>
+        </div>
+
+        <div style="float: right;width: 23%;margin-right: 8%;">
+            <div>
+                <img src="~/assets/images/logo.png" />
+            </div>
+            <div>
+                <div class="text-right">
+                    <p>صيدلية بيت الدواجن البيطرية،  العين، خلف البوادي مول، الإمارات العربية المتحدة هاتف: 971553311168</p>
+                    <p>Bayt Alddwajin Veterinary Medicines, Al Ain Central Souq, Beside Bawadi Mall, United Arab Emirates,971553311168</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-9" style="margin-top:50px;">
+            <div class="col-md-2"></div>
+            <div class="col-md-9">
+                <table class="table">
+                    <thead style="background-color: #c8c8c8;">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Deliver_Date</th>
+                            <th scope="col">Device_SerialNumber</th>
+                            <th scope="col">Device_Model</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@Html.DisplayFor(model => model.Id)</td>
+                            <td>@Html.DisplayFor(model => model.Deliver_Date)</td>
+                            <td>@Html.DisplayFor(model => model.Device_SerialNumber)</td>
+                            <td>@Html.DisplayFor(model => model.Device_Model)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-9" style="margin-top:50px;">
+            <div class="col-md-2"></div>
+            <div class="col-md-9">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td style="background-color: #c8c8c8;">Client Name</td>
+                            <td>@Html.DisplayFor(model => model.Customer_Name)</td>
+
+                            <td style="background-color: #c8c8c8;">Customer City</td>
+                            <td>@Html.DisplayFor(model => model.CustomerCity.CustomerCity)</td>
+
+                        </tr>
+
+                        <tr>
+                            <td style="background-color: #c8c8c8;">Customer Phone 2</td>
+                            <td>@Html.DisplayFor(model => model.Customer_Phone_2)</td>
+                        </tr>
+
+                        <tr>
+                            <td style="background-color: #c8c8c8;">Customer Phone 1</td>
+                            <td>@Html.DisplayFor(model => model.Customer_Phone_1)</td>
+
+                        </tr>
+
+                        <tr>
+                            <td style="background-color: #c8c8c8;">Customer Adress</td>
+                            <td>@Html.DisplayFor(model => model.Customer_Adress)</td>
+
+                            <td style="background-color: #c8c8c8;">Client Remarks</td>
+                            <td>@Html.DisplayFor(model => model.ClientRemarks)</td>
+                        </tr>
+
+                        <tr>
+                            <td style="background-color: #c8c8c8;">Accrssories</td>
+                            <td>@Html.DisplayFor(model => model.Accrssories)</td>
+                        </tr>
+
+                        <tr>
+                            <td style="background-color: #c8c8c8;">Deliver Reason</td>
+                            <td>@Html.DisplayFor(model => model.deliverReason)</td>
+                        </tr>
+
+
+
+                        <tr>
+                            <td rowspan="4" colspan="4" class="bill-paragraph">عزيزي العميل، يرجى التأكد من صحة بياناتك قبل المغادرة للتمكن من الاتصال بك</td>
+                        </tr>
+                        <tr>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <p class="text-right" style="direction:rtl; font-family:Calibri;font-weight:bold;font-size:18px;line-height:30px;">الشروط</p>
+                <ul class="text-right" style="direction:rtl; font-family:Calibri;font-weight:bold;font-size:18px;line-height:30px;">
+                    <li>ستلتزم صيدلية بيت الدواجن البيطرية بفحص الماكينة وإبلاغ العميل عن الأعطال وتكلفة التصليح في أقرب وقت ممكن، وأخذ موافقة العميل قبل البدأ بعملية التصليح.</li>
+                    <li>يتوجب على العميل استلام الماكينة خلال 5 ايام من تاريخ الإنتهاء من تصليحها، وبعد مرور هذه المدة لن تتحمل الصيدلية أي مسؤولية عن ضياع الماكينة او تلفها او تعرضها للأعطال او اي ضرر آخر.</li>
+                    <li>على العميل إبراز أصل ايصال التصليح عند استلام الماكينة، وإلا فلن يتم تسليم الماكينة .</li>
+                    <li>يتوجب على العميل فحص الماكينة بشكل جيد والتأكد من عملها بشكل صحيح قبل استلامها، وفي حال الاستلام تعتبر الصيدلية غير مسؤولة عن أي عطل او ضرر بالماكينة.</li>
+                    <li>يلتزم مقدم طلب الصيانة بدفع تكلفة خدمة الفحص حتى وإن لم يتم تصليح الجهاز وذلك مقابل الجهد المبذول في عملية الفحص.</li>
+                    <li>لا يحق للعميل المطالبة بإسترجاع القطع المستبدلة بعد إستلامه للماكينة حيث ان الصيدلية ستقوم بالتخلص منها بعد تسليم الماكينة مباشرة في حال عدم مطالبة العميل بها وقت التسليم.</li>
+                    <li>عدم قراءة العميل لجميع الشروط المذكوة اعلاه لا يحملنا أي مسئوليه تجاه ذلك، ويعتبر إستلامه لهذا الإيصال بمثابة موافقته على جميع الشروط.</li>
+                </ul>
+                <p class="bill-footer">يرجى التواصل مع الإدارة في حال وجود أي ملاحظات او شكاوي على الرقم 971553311168</p>
+
+                <button class="print-link no-print btn btn-success col-md-12" style="margin:50px 0 100px 0;" onclick="jQuery('#bill_print').print()">
+                    Print
+                </button>
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+</div>
