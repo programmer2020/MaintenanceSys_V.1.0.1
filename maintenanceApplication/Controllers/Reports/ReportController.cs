@@ -74,8 +74,6 @@ namespace maintenanceApplication.Controllers.Reports
 
 
 
-
-
         [HttpGet]
         public ActionResult TechnicalReport()
         {
