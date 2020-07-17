@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace maintenanceApplication.Controllers.Reports
 {
+    [Authorize]
     public class ReportController : Controller
     {
         private ApplicationDbContext _context;
@@ -26,15 +27,12 @@ namespace maintenanceApplication.Controllers.Reports
         [HttpGet]
         public ActionResult ReparingCheqView()
         {
-
             return View("ReparingCheq");
         }
-
 
         [HttpGet]
         public ActionResult ReparingCheq()
         {
-
             return View("PrintDeliverReport", new MaintenanceModel());
         }
 
@@ -68,16 +66,11 @@ namespace maintenanceApplication.Controllers.Reports
             {
                 return View("PrintDeliverReport", new MaintenanceModel());
             }
-
         }
-
-
-
 
         [HttpGet]
         public ActionResult TechnicalReport()
         {
-
             return View("TechnicalReport", new MaintenanceModel());
         }
 
@@ -94,6 +87,8 @@ namespace maintenanceApplication.Controllers.Reports
 
                     if (maintenance_requests != null)
                     {
+                        var getAllComments = _context.maintenceComments.Where(x => x.MaintenanceModelId == id).ToList();
+                        TempData["allComments"] = getAllComments.ToList(); 
                         return View("TechnicalReport", maintenance_requests);
                     }
                     else
@@ -111,7 +106,6 @@ namespace maintenanceApplication.Controllers.Reports
             {
                 return View("TechnicalReport", new MaintenanceModel());
             }
-
         }
 
 

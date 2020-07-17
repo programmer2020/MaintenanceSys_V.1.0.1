@@ -211,12 +211,21 @@
                 @Html.HiddenFor(model => model.maintenance.TechnicalReport)
                 @Html.HiddenFor(model => model.maintenance.Recommendations)
 
-                <div class="form-group" style="margin:30px 0 100px 0;">
+                <div class="form-group">
                     <div class="col-md-12">
-                        <div class="col-md-6"></div>
+                        <div class="col-md-5"></div>
                         <input type="submit" class="btn btn-primary" formaction="/Maintenance/updateDelivred/@ViewData["mainId"]" value="Save"
                                formmethod="post" />
-                        <a href="/Maintenance/GetNewMaintenanceRequests" class=" btn btn-warning ">Cancel</a>
+
+                        <input type="submit" class="btn btn-success" formaction="/Report/ReparingCheq/@ViewData["mainId"]" value="Print Recipt"
+                               formmethod="post" />
+
+
+                        <input type="submit" class="btn btn-warning" formaction="/Report/TechnicalReport/@ViewData["mainId"]" value="Technical Report"
+                               formmethod="post" />
+
+
+                        <a href="/Maintenance/GetNewMaintenanceRequests" class=" btn btn-danger">Cancel</a>
                     </div>
                 </div>
 

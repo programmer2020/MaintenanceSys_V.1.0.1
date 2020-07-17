@@ -315,6 +315,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\animate.css" />
     <Content Include="Content\css\colors\blue.css" />
+    <Content Include="Content\css\customeStyle.css" />
+    <Content Include="Content\css\print.css" />
     <Content Include="Content\css\spinners.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\table.css" />
