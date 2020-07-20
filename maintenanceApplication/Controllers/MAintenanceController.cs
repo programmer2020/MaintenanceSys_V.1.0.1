@@ -157,7 +157,7 @@ namespace maintenanceApplication.Controllers
         [HttpPost]
         public ActionResult Unrepairable(int id)
         {
-            var maintenanceStart = _context.status.SingleOrDefault(x => x.StatusName == "Delivered");
+            var maintenanceStart = _context.status.SingleOrDefault(x => x.StatusName == "To be Delivered");
             var maintenance = _context.maintenance.SingleOrDefault(x => x.Id == id);
             maintenance.MaintenanceStatusModelId = maintenanceStart.Id;
             maintenance.deliverReason = "Unrepairable";
@@ -963,9 +963,17 @@ namespace maintenanceApplication.Controllers
         [HttpGet]
         public ActionResult GetAllMAintenanceComments(int id)
         {
-            var allComments = _context.maintenceComments.Where(x=>x.MaintenanceModelId == id).ToList();
-            ViewData["count"] = allComments.Count();
-            return View("GetAllMaintenanceComments", allComments);
+            try
+            {
+                var allComments = _context.maintenceComments.Where(x => x.MaintenanceModelId == id).ToList();
+                ViewData["count"] = allComments.Count();
+                return View("GetAllMAintenanceComments", allComments);
+            }
+            catch
+            {
+                return View(); 
+            }
+          
         }
 
         [HttpGet]

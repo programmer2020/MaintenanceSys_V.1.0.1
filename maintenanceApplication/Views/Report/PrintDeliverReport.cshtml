@@ -12,6 +12,8 @@
         text-align: right;
         font-weight: bold;
         font-size: 24px;
+        margin-bottom:20px;
+        margin-top:20px;
     }
 
     .bill-footer {
@@ -128,19 +130,20 @@
                             <td colspan="3">@Html.DisplayFor(model => model.deliverReason)</td>
                         </tr>
 
-                        <tr style="height:200px;">
+                        @*<tr style="height:200px;">
                             <td style="background-color: #c8c8c8;">Client Remarks</td>
-                            <td colspan="3" >@Html.DisplayFor(model => model.ClientRemarks)</td>
-                        </tr>
+                            <td colspan="3">@Html.DisplayFor(model => model.ClientRemarks)</td>
+                        </tr>*@
 
-                        <tr>
-                            <td rowspan="4" colspan="4" class="bill-paragraph">عزيزي العميل، يرجى التأكد من صحة بياناتك قبل المغادرة للتمكن من الاتصال بك</td>
-                        </tr>
-                        <tr>
-                        </tr>
 
                     </tbody>
                 </table>
+
+                    @Html.LabelFor(model => model.ClientRemarks, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextAreaFor(model => model.ClientRemarks, new { @class = "form-control", @style = "height:200px;" , @disabled = "disabled"  })
+
+
+                <div class="bill-paragraph">عزيزي العميل، يرجى التأكد من صحة بياناتك قبل المغادرة للتمكن من الاتصال بك</div>
 
                 <p class="text-right" style="direction:rtl; font-family:Calibri;font-weight:bold;font-size:18px;line-height:30px;">الشروط</p>
                 <ul class="text-right" style="direction:rtl; font-family:Calibri;font-weight:bold;font-size:18px;line-height:30px;">

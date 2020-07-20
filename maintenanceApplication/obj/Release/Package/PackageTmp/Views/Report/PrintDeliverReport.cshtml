@@ -24,7 +24,7 @@
     }
 </style>
 
-<div class="col-md-9">
+@*<div class="col-md-9">
     @using (Html.BeginForm("serachDeliveredReport", "Report"))
     {
         @Html.AntiForgeryToken()
@@ -39,7 +39,7 @@
         </div>
     }
 
-</div>
+</div>*@
 
 
 <div id="bill_print" class="a">
@@ -111,33 +111,27 @@
                         <tr>
                             <td style="background-color: #c8c8c8;">Customer Phone 2</td>
                             <td>@Html.DisplayFor(model => model.Customer_Phone_2)</td>
-                        </tr>
 
-                        <tr>
                             <td style="background-color: #c8c8c8;">Customer Phone 1</td>
                             <td>@Html.DisplayFor(model => model.Customer_Phone_1)</td>
-
                         </tr>
 
                         <tr>
                             <td style="background-color: #c8c8c8;">Customer Adress</td>
                             <td>@Html.DisplayFor(model => model.Customer_Adress)</td>
-
-                            <td style="background-color: #c8c8c8;">Client Remarks</td>
-                            <td>@Html.DisplayFor(model => model.ClientRemarks)</td>
-                        </tr>
-
-                        <tr>
                             <td style="background-color: #c8c8c8;">Accrssories</td>
                             <td>@Html.DisplayFor(model => model.Accrssories)</td>
                         </tr>
 
                         <tr>
                             <td style="background-color: #c8c8c8;">Deliver Reason</td>
-                            <td>@Html.DisplayFor(model => model.deliverReason)</td>
+                            <td colspan="3">@Html.DisplayFor(model => model.deliverReason)</td>
                         </tr>
 
-
+                        <tr style="height:200px;">
+                            <td style="background-color: #c8c8c8;">Client Remarks</td>
+                            <td colspan="3" >@Html.DisplayFor(model => model.ClientRemarks)</td>
+                        </tr>
 
                         <tr>
                             <td rowspan="4" colspan="4" class="bill-paragraph">عزيزي العميل، يرجى التأكد من صحة بياناتك قبل المغادرة للتمكن من الاتصال بك</td>
@@ -166,9 +160,6 @@
             </div>
 
         </div>
-
-
-
 
 
     </div>

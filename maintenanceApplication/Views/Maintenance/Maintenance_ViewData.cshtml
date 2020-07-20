@@ -82,11 +82,11 @@
             </div>
 
             @*<div class="form-group">
-                @Html.LabelFor(model => model.maintenance.Recommendations, htmlAttributes: new { @class = "control-label col-md-3" })
-                <div class="col-md-9">
-                    @Html.TextAreaFor(model => model.maintenance.Recommendations, new { @class = "form-control", @style = "height : 200px" })
-                </div>
-            </div>*@
+            @Html.LabelFor(model => model.maintenance.Recommendations, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-9">
+                @Html.TextAreaFor(model => model.maintenance.Recommendations, new { @class = "form-control", @style = "height : 200px" })
+            </div>
+        </div>*@
 
             @*<div class="form-group">
             @Html.LabelFor(model => model.maintenance.priority.PriorityName, "Priority Name", htmlAttributes: new { @class = "control-label col-md-3" })
@@ -113,7 +113,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.maintenance.userName, htmlAttributes: new { @class = "control-label col-md-3" })
                 <div class="col-md-9">
-                    @Html.EditorFor(model => model.maintenance.userName, new { htmlAttributes = new { @class = "form-control"  , disabled="disabled"} })
+                    @Html.EditorFor(model => model.maintenance.userName, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
                 </div>
             </div>
 
@@ -216,6 +216,7 @@
             @Html.HiddenFor(model => model.maintenance.MaintenancePriorityModelId)
             @Html.HiddenFor(model => model.maintenance.TechnicalReport)
             @Html.HiddenFor(model => model.maintenance.Recommendations)
+            @Html.HiddenFor(model => model.maintenance.userName)
 
             <div class="col-md-12" style="margin-bottom:100px;margin-top:30px;">
                 <div class="col-md-3"></div>
@@ -236,7 +237,15 @@
         </div>
 
         @{
-            Html.RenderAction("GetAllMAintenanceComments" , new { id = @ViewData["mainId"] });
+            try
+            {
+                Html.RenderAction("GetAllMAintenanceComments", new { id = @ViewData["mainId"] });
+
+            }
+            catch
+            {
+
+            }
         }   
 
 

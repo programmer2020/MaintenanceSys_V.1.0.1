@@ -7,6 +7,7 @@ using Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 
 [assembly: OwinStartupAttribute(typeof(maintenanceApplication.Startup))]
@@ -14,6 +15,8 @@ namespace maintenanceApplication
 {
     public partial class Startup
     {
+        ApplicationDbContext context = new ApplicationDbContext();
+
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
@@ -21,10 +24,8 @@ namespace maintenanceApplication
             IntialData();
         }
 
-        private void IntialData()
+        private  void IntialData()
         {
-            ApplicationDbContext context = new ApplicationDbContext();
-
             ////check if status have data
             var statusData = context.status.ToList();
             if (statusData.Count < 1)
@@ -74,29 +75,28 @@ namespace maintenanceApplication
         }
         private void CreateUSerAndRoles()
         {
-            //ApplicationDbContext context = new ApplicationDbContext();
+            ApplicationDbContext context = new ApplicationDbContext();
 
-            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-            //var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            //if (!roleManager.RoleExists("SuperAdmin")){
-            //    var role = new IdentityRole("SuperAdmin");
-            //    roleManager.Create(role);
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            if (!roleManager.RoleExists("SuperAdmin"))
+            {
+                var role = new IdentityRole("SuperAdmin");
+                roleManager.Create(role);
 
-            //    //Create Default user 
-            //    var user = new ApplicationUser();
-            //    user.UserName = "admin@admin.com";
-            //    user.Email = "admin@admin.com";
-            //    string pwd = "Omak@2020";
+                //Create Default user 
+                var user = new ApplicationUser();
+                user.UserName = "admin@admin.com";
+                user.Email = "admin@admin.com";
+                string pwd = "Omak@2020";
 
-            //    var newUser = userManager.Create(user, pwd);
-            //    if (newUser.Succeeded)
-            //    {
-            //        userManager.AddToRole(user.Id, "SuperAdmin"); 
-            //    }
+                var newUser = userManager.Create(user, pwd);
+                if (newUser.Succeeded)
+                {
+                    userManager.AddToRole(user.Id, "SuperAdmin");
+                }
 
-
-
-            //}
+            }
 
         }
     }

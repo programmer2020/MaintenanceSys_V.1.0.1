@@ -24,7 +24,7 @@
     }
 </style>
 
-<div class="col-md-9">
+@*<div class="col-md-9">
     @using (Html.BeginForm("serachDeliveredReport", "Report"))
     {
         @Html.AntiForgeryToken()
@@ -38,7 +38,7 @@
         </div>
     }
         
-</div>
+</div>*@
 
 <div id="bill_print" class="a">
     <div>
@@ -47,7 +47,6 @@
                 <h3 class="text-center" style="font-family:Calibri;font-weight:bold;font-size:30px;">التقرير الفني</h3>
                 <h3 class="text-left" style="font-family:sans-serif;font-weight:bold;margin-top:-5px;">Technical Report</h3>
             </div>
-
         </div>
 
         <div style="float: right;width: 23%;margin-right: 8%;">
@@ -59,7 +58,7 @@
         <div class="col-md-9" style="margin-top:50px;">
             <div class="col-md-2"></div>
             <div class="col-md-9">
-                <table class="table">
+                <table class="table table-print">
                     <thead style="background-color: #c8c8c8;">
                         <tr>
                             <th scope="col">Id</th>
@@ -95,7 +94,7 @@
                     </tbody>
                 </table>
 
-                <table class="table">
+                <table class="table table-print">
                     <thead style="background-color: #c8c8c8;">
                         <tr>
                             <th scope="col">User Name</th>
@@ -131,10 +130,10 @@
                     </tbody>
                 </table>
 
-                <table class="table">
+                <table class="table table-print">
                     <thead style="background-color: #c8c8c8;">
                         <tr>
-                            <th scope="col">Deliver Date</th>
+                          
                             <th scope="col">Start Checking Date</th>
                             <th scope="col">Complete Checking Date</th>
                             <th scope="col">Approval Date</th>
@@ -142,7 +141,6 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>@Html.DisplayFor(model => model.Deliver_Date)</td>
                             <td>@Html.DisplayFor(model => model.StartCheckingDate)</td>
                             <td>@Html.DisplayFor(model => model.CheckCompleted_Date)</td>
 
@@ -172,7 +170,7 @@
                     </tbody>
                 </table>
 
-                <table class="table">
+                <table class="table table-print">
                     <thead style="background-color: #c8c8c8;">
                         <tr>
                             <th scope="col">Checking Started</th>
@@ -211,7 +209,7 @@
                     </tbody>
                 </table>
 
-                <table class="table">
+                <table class="table table-print">
                     <thead style="background-color: #c8c8c8;">
                         <tr>
                             <th scope="col">Client Remarks</th>
@@ -225,7 +223,7 @@
                     </tbody>
                 </table>
 
-                <table class="table">
+                <table class="table table-print">
                     <thead style="background-color: #c8c8c8;">
                         <tr>
                             <th scope="col">Technical Report</th>
@@ -239,7 +237,7 @@
                     </tbody>
                 </table>
 
-                <table class="table">
+                <table class="table table-print">
                     <thead style="background-color: #c8c8c8;">
                         <tr>
                             <th scope="col">Recommendation</th>
@@ -253,7 +251,7 @@
                     </tbody>
                 </table>
 
-                <table class="table">
+                <table class="table table-print">
                     <thead style="background-color: #c8c8c8;">
                         <tr>
                             <th scope="col">Notes</th>

@@ -18,6 +18,7 @@
     <link href="~/Content/limon/css/font-awesome.min.css" rel="stylesheet">
     <link href="~/Content/limon/css/datepicker3.css" rel="stylesheet">
     <link href="~/Content/limon/css/styles.css" rel="stylesheet">
+    <link href="~/Content/css/style.css" rel="stylesheet">
 
     <!--Custom Font-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -46,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="/assets/images/01.jpg" style="border-radius:10px; width:5%;margin-top:-15px;" /></a>
+                <a class="navbar-brand" href="#"><img src="/assets/images/01.jpg" style="border-radius:10px; width:18%;" /></a>
 
             </div>
         </div>
@@ -117,19 +118,19 @@
 
     <script src="~/Content/js/jQuery.print.js"></script>
     <script type='text/javascript'>
-    //<![CDATA[
         jQuery(function ($) {
             'use strict';
             $("#bill_print").find('.print-link').on('click', function () {
-                //Print ele2 with default options
                 $("#bill_print").print({
-                    noPrintSelector: ".print-link", mediaPrint: false
+                    noPrintSelector: ".print-link",
+                    mediaPrint: true
                 }); 
-                //$.print("#bill_print");
             });
 
         });
-            //]]></script>
+    </script>
+
+
 
 </body>
 
