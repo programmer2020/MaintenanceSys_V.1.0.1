@@ -222,15 +222,21 @@
 
         </div>
 
-                <div class="col-md-12" style="margin-left:40%;margin-top:20px;margin-bottom:50px;">
-                    <div class="form-group col-md-6" style="margin-right:1%;">
+                <div class="col-md-12" style="margin-top:20px;margin-bottom:50px;">
+                    <div class="col-md-3"></div>
                         <input type="submit" class="btn btn-primary" formaction="/Maintenance/updateApproved/@ViewData["mainId"]" value="Save"
                                formmethod="post" />
                         <input type="submit" name="StartReparing" class="btn btn-success" value="Start Reparing" id="StartReparing"
                                formaction="/Maintenance/StartMaintenance/@ViewData["mainId"]" formmethod="post" />
+
+                        <input type="submit" class="btn btn-info" formaction="/Report/ReparingCheq/@ViewData["mainId"]" value="Print Recipt"
+                               formmethod="post" />
+
+                        <input type="submit" class="btn btn-dark" formaction="/Report/TechnicalReport/@ViewData["mainId"]" value="Technical Report"
+                               formmethod="post" />
+
                         <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning form-group" style="margin-left:1%;">Cancel</a>
 
-                    </div>
                 </div>
             }
         </div>

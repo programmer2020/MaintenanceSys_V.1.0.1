@@ -218,19 +218,26 @@
 
 
 
-                <div class="col-md-12" style="margin-bottom:100px;margin-top:30px;">
-                    <div class="col-md-6"></div>
-                    <input type="submit" class="btn btn-primary" formaction="/Maintenance/updateUnderApproval/@ViewData["mainId"]" value="Save"
-                           formmethod="post" />
-                    <input type="submit" class="btn btn-success" formaction="/Maintenance/Maintennace_Approve_Request_Action/@ViewData["mainId"]" value="Approve"
-                           formmethod="post" />
-                    <input type="submit" class="btn btn-danger" formaction="/Maintenance/Maintennace_Rject_Request_Action/@ViewData["mainId"]" value="Reject"
-                           formmethod="post" />
-                    <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning form-group" style="margin-left:1%;">Cancel</a>
+            <div class="col-md-12" style="margin-bottom:100px;margin-top:30px;">
+                <div class="col-md-3"></div>
+                <input type="submit" class="btn btn-primary" formaction="/Maintenance/updateUnderApproval/@ViewData["mainId"]" value="Save"
+                       formmethod="post" />
+                <input type="submit" class="btn btn-success" formaction="/Maintenance/Maintennace_Approve_Request_Action/@ViewData["mainId"]" value="Approve"
+                       formmethod="post" />
+                <input type="submit" class="btn btn-danger" formaction="/Maintenance/Maintennace_Rject_Request_Action/@ViewData["mainId"]" value="Reject"
+                       formmethod="post" />
+
+                <input type="submit" class="btn btn-info" formaction="/Report/ReparingCheq/@ViewData["mainId"]" value="Print Recipt"
+                       formmethod="post" />
+
+                <input type="submit" class="btn btn-dark" formaction="/Report/TechnicalReport/@ViewData["mainId"]" value="Technical Report"
+                       formmethod="post" />
+
+                <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning form-group" style="margin-left:1%;">Cancel</a>
 
 
 
-                </div>
+            </div>
 
             </div>
 

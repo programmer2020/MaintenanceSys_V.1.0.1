@@ -105,7 +105,20 @@
                     </div>
                 </div>
 
-
+                @Html.HiddenFor(model => model.maintenance.Id)
+                @Html.HiddenFor(model => model.maintenance.Customer_Name)
+                @Html.HiddenFor(model => model.maintenance.Customer_Phone_1)
+                @Html.HiddenFor(model => model.maintenance.Customer_Phone_2)
+                @Html.HiddenFor(model => model.maintenance.CustomerCity.CustomerCity)
+                @Html.HiddenFor(model => model.maintenance.Customer_Adress)
+                @Html.HiddenFor(model => model.maintenance.CreationDate)
+                @Html.HiddenFor(model => model.maintenance.Device_Model)
+                @Html.HiddenFor(model => model.maintenance.Device_SerialNumber)
+                @Html.HiddenFor(model => model.maintenance.Accrssories)
+                @Html.HiddenFor(model => model.maintenance.ClientRemarks)
+                @Html.HiddenFor(model => model.maintenance.MaintenancePriorityModelId)
+                @Html.HiddenFor(model => model.maintenance.TechnicalReport)
+                @Html.HiddenFor(model => model.maintenance.Recommendations)
 
                 @if (Model.maintenance.CreationDate != null)
                 {
@@ -189,35 +202,25 @@
                     </div>
                 }
 
-                @Html.HiddenFor(model => model.maintenance.Id)
-                @Html.HiddenFor(model => model.maintenance.Customer_Name)
-                @Html.HiddenFor(model => model.maintenance.Customer_Phone_1)
-                @Html.HiddenFor(model => model.maintenance.Customer_Phone_2)
-                @Html.HiddenFor(model => model.maintenance.CustomerCity.CustomerCity)
-                @Html.HiddenFor(model => model.maintenance.Customer_Adress)
-                @Html.HiddenFor(model => model.maintenance.CreationDate)
-                @Html.HiddenFor(model => model.maintenance.Device_Model)
-                @Html.HiddenFor(model => model.maintenance.Device_SerialNumber)
-                @Html.HiddenFor(model => model.maintenance.Accrssories)
-                @Html.HiddenFor(model => model.maintenance.ClientRemarks)
-                @Html.HiddenFor(model => model.maintenance.MaintenancePriorityModelId)
-                @Html.HiddenFor(model => model.maintenance.TechnicalReport)
-                @Html.HiddenFor(model => model.maintenance.Recommendations)
+                <div style="margin-left:20%;width:100%;">
+                    <input type="submit" class="btn btn-primary" formaction="/Maintenance/updateUnderReparing/@ViewData["mainId"]" value="Save"
+                           formmethod="post" />
 
-                <div class="col-md-3" style="margin-left:5%"></div>
+                    <input type="submit" name="RepairCompleted" class="btn btn-success" value="Repair Completed" id="RepairCompleted"
+                           formaction="/Maintenance/RepairCompleted/@ViewData["mainId"]" formmethod="post" />
 
-                <input type="submit" class="btn btn-primary" formaction="/Maintenance/updateUnderReparing/@ViewData["mainId"]" value="Save"
-                       formmethod="post" />
+                    <input type="submit" name="Unrepairable" class="btn btn-danger" value="Unrepairable" id="Unrepairable"
+                           formaction="/Maintenance/Unrepairable/@ViewData["mainId"]" formmethod="post" />
 
-                <input type="submit" name="RepairCompleted" class="btn btn-success" value="Repair Completed" id="RepairCompleted"
-                       formaction="/Maintenance/RepairCompleted/@ViewData["mainId"]" formmethod="post" />
+                    <input type="submit" class="btn btn-info" formaction="/Report/ReparingCheq/@ViewData["mainId"]" value="Print Recipt"
+                           formmethod="post" />
 
-                <input type="submit" name="Unrepairable" class="btn btn-danger" value="Unrepairable" id="Unrepairable"
-                       formaction="/Maintenance/Unrepairable/@ViewData["mainId"]" formmethod="post" />
+                    <input type="submit" class="btn btn-dark" formaction="/Report/TechnicalReport/@ViewData["mainId"]" value="Technical Report"
+                           formmethod="post" />
 
-                <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning form-group" style="margin-left:1%;">Cancel</a>
+                    <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning ">Cancel</a>
 
-
+                </div>
 
             </div>
             }

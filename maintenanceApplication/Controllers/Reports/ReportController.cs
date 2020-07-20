@@ -43,9 +43,9 @@ namespace maintenanceApplication.Controllers.Reports
             {
                 if(id != 0)
                 {
-                    var maintenanceSatus = _context.status.Where(x => x.StatusName == "Delivered").FirstOrDefault();
-                    int statusId = maintenanceSatus.Id;
-                    var maintenance_requests = _context.maintenance.Where(x => x.Id == id).Where(x => x.MaintenanceStatusModelId == statusId).Include(x => x.priority).Include(x => x.status).Include(x => x.CustomerCity).FirstOrDefault();
+                    //var maintenanceSatus = _context.status.Where(x => x.StatusName == "Delivered").FirstOrDefault();
+                    //int statusId = maintenanceSatus.Id;
+                    var maintenance_requests = _context.maintenance.Where(x => x.Id == id).Include(x => x.priority).Include(x => x.status).Include(x => x.CustomerCity).FirstOrDefault();
                     
                     if(maintenance_requests != null)
                     {

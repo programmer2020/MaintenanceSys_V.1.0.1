@@ -203,18 +203,21 @@
                 @Html.HiddenFor(model => model.maintenance.Recommendations)
 
 
-                <div class="col-md-12" style="margin:20px 0 80px 0;">
-                    <div class="col-md-5"></div>
-                    <div class="form-group col-md-7">
+                <div class="col-md-12" style="margin-left:25%;margin-bottom:50px;">
                         <input type="submit" class="btn btn-primary" formaction="/Maintenance/updateQualityChecked/@ViewData["mainId"]" value="Save"
                                formmethod="post" />
-
                         <input type="submit" name="QualityApproved" class="btn btn-success" value="Approved" id="QualityApproved"
                                formaction="/Maintenance/ApproveMaintenanceQuality/@ViewData["mainId"]" formmethod="post" />
-                        <input type="submit" name="QualityRejected" class="btn btn-danger" value="Rejected" id="QualityRejected"
+                       
+                    <input type="submit" name="QualityRejected" class="btn btn-danger" value="Rejected" id="QualityRejected"
                                formaction="/Maintenance/MaintenanceRejectQuality/@ViewData["mainId"]" formmethod="post" />
+
+                        <input type="submit" class="btn btn-info" formaction="/Report/ReparingCheq/@ViewData["mainId"]" value="Print Recipt"
+                               formmethod="post" />
+
+                        <input type="submit" class="btn btn-dark" formaction="/Report/TechnicalReport/@ViewData["mainId"]" value="Technical Report"
+                               formmethod="post" />
                         <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning form-group" style="margin-left:1%;">Cancel</a>
-                    </div>
                 </div>
             </div>
             }

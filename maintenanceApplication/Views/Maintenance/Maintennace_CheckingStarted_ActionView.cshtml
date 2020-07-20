@@ -195,24 +195,28 @@
                 }
 
 
-                <div class="col-md-12" style="margin-bottom:100px;margin-top:30px;">
-                    <div class="col-md-2"></div>
-                    <input type="submit" name="underCheckingStatus" class="btn btn-info" value="Save" id="updateStatus_underChecking"
-                           formaction="/Maintenance/updateUnderChecking/@ViewData["mainId"]" formmethod="post" />
+            <div style="margin-bottom:100px;margin-top:30px; margin-left:20%;width:100%;">
+                <input type="submit" name="underCheckingStatus" class="btn btn-info" value="Save" id="updateStatus_underChecking"
+                       formaction="/Maintenance/updateUnderChecking/@ViewData["mainId"]" formmethod="post" />
 
-                    <input type="submit" class="btn btn-success" formaction="/Maintenance/CheckCompleted/@ViewData["mainId"]" value="Check Completed"
-                           formmethod="post" />
+                <input type="submit" class="btn btn-success" formaction="/Maintenance/CheckCompleted/@ViewData["mainId"]" value="Check Completed"
+                       formmethod="post" />
 
-                    <input type="submit" class="btn btn-primary" formaction="/Maintenance/SaveAsDraft/@ViewData["mainId"]" value="Save As Draft"
-                           formmethod="post" />
+                <input type="submit" class="btn btn-primary" formaction="/Maintenance/SaveAsDraft/@ViewData["mainId"]" value="Save As Draft"
+                       formmethod="post" />
 
+                <input type="submit" class="btn btn-danger" formaction="/Maintenance/Unrepairable/@ViewData["mainId"]" value="Unrepairable"
+                       formmethod="post" />
 
-                    <input type="submit" class="btn btn-danger" formaction="/Maintenance/Unrepairable/@ViewData["mainId"]" value="Unrepairable"
-                           formmethod="post" />
+                <input type="submit" class="btn btn-info" formaction="/Report/ReparingCheq/@ViewData["mainId"]" value="Print Recipt"
+                       formmethod="post" />
 
-                    <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning" style="margin-right:1%;">Cancel</a>
+                <input type="submit" class="btn btn-dark" formaction="/Report/TechnicalReport/@ViewData["mainId"]" value="Technical Report"
+                       formmethod="post" />
 
-                </div>
+                <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning" style="margin-top:10px;">Cancel</a>
+
+            </div>
 
             </div>
 
