@@ -1,0 +1,213 @@
+﻿@model IEnumerable<maintenanceApplication.Models.Maintenance.MaintenanceModel>
+@{
+    ViewBag.Title = "GetAllMAintenance";
+}
+
+    <div class="row">
+        <div class="col-md-9" style="width: 85% !important">
+            <div class="panel panel-default">
+                <div class="panel-body tabs">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1" data-toggle="tab">New</a></li>
+                        <li><a href="#tab2" data-toggle="tab">Under Checking</a></li>
+                        <li><a href="#tab3" data-toggle="tab">Under Approval</a></li>
+                        <li><a href="#tab4" data-toggle="tab">Approved</a></li>
+                        <li><a href="#tab5" data-toggle="tab">Under Reparing</a></li>
+                        <li><a href="#tab6" data-toggle="tab">Quality Check</a></li>
+                        <li><a href="#tab7" data-toggle="tab">To Be Delivred</a></li>
+                        <li><a href="#tab8" data-toggle="tab">Delivred</a></li>
+                    </ul>   
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="tab1">
+                            <div class="float-left" style="margin-bottom: 20px;">
+                                <a href="/Maintenance/CreateNewMaintenanceRequest" class="btn btn-primary">Create New</a>
+                            </div>
+                            <table class="display table-responsive" id="new_tabe">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            ID
+                                        </th>
+                                        <th>
+                                            Date
+                                        </th>
+                                        <th>
+                                            Serial No
+                                        </th>
+                                        <th>
+                                            Model
+                                        </th>
+                                        <th>
+                                            Name
+                                        </th>
+                                        <th>
+                                            Phone 1
+                                        </th>
+                                        <th>
+                                            Phone 2
+                                        </th>
+                                        <th>
+                                            Priority
+                                        </th>
+                                        <th>
+                                            Status
+                                        </th>
+
+                                        <th>
+                                            Repeated
+                                        </th>
+
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr id="row_@item.Id">
+                                            @Html.HiddenFor(modelItem => item.Id, new { @id = "mainId" })
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Id)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CreationDate)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Device_SerialNumber)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Device_Model)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Customer_Name)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Customer_Phone_1)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Customer_Phone_2)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.priority.PriorityName)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.status.StatusName)
+                                            </td>
+                                            @if (item.isRepeated == true)
+                                            {
+                                                <td>
+                                                    <div style="background:#ff0000;width:30px;height:30px;border-radius:30px;margin-left:30%;"></div>
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td></td>
+                                            }
+
+                                            <td>
+                                                @Html.ActionLink("Actions", "EditMaintenance", new { id = item.Id })
+                                            </td>
+                                            <td><button data-maintenance-id="@item.Id" onclick="DeleteMaintenanceRecord(@item.Id)" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i></button></td>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="tab2">
+                            @{
+                                Html.RenderAction("getMaintenanceCheckingStartedRequests");
+                            }
+                        </div>
+                        <div class="tab-pane fade" id="tab3">
+                            @{
+                                Html.RenderAction("GetAllUnderApprovalRequests");
+                            }
+                        </div>
+
+                        <div class="tab-pane fade" id="tab4">
+                            @{
+                                Html.RenderAction("GetApprovedRequests");
+                            }
+                        </div>
+
+                        <div class="tab-pane fade" id="tab5">
+                            @{
+                                Html.RenderAction("GetUnderReparingRequests");
+                            }
+                        </div>
+
+                        <div class="tab-pane fade" id="tab6">
+                            @{
+                                Html.RenderAction("GetAllMaintenance_Quality_Check");
+                            }
+                        </div>
+
+                        <div class="tab-pane fade" id="tab7">
+                            @{
+                                Html.RenderAction("GetAllToBedeliveredRequests");
+                            }
+                        </div>
+
+                        <div class="tab-pane fade" id="tab8">
+                            @{
+                                Html.RenderAction("getdeliveredRequests");
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div><!--/.panel-->
+        </div><!--/.col-->
+    </div>
+
+
+<div class="modal fade" id="DeleteConfirmation">
+    <div class="modal-dialog" style=" top: 237px; height: 200px;">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4>Are You Sure? You Want To Delete This Record.</h4>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary" data-dismiss="modal" id="r">Cancle</a>
+                <a href="#" class="btn btn-danger" onclick="ConfirmDelete()">Confirm</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var DeleteMaintenanceRecord = function (maintId) {
+        $("#mainId").val(maintId);
+        $("#DeleteConfirmation").modal("show");
+    }
+    var ConfirmDelete = function () {
+        var maintenanceId = $("#mainId").val();
+        $.ajax({
+            type: "POST",
+            url: "/Maintenance/DeleteMaintenance?mainId=" + maintenanceId,
+            success: function (result) {
+                $("#DeleteConfirmation").modal("hide");
+                $("#row_" + maintenanceId).remove();
+            }
+        })
+    }
+</script>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('#new_tabe').DataTable();
+            var table = $('#new_tabe').DataTable();
+        });
+    </script>
+}
+
+
+
+
+@*@if (!Model.Any())
+        {
+            <p>No Employee Found</p>
+    }*@

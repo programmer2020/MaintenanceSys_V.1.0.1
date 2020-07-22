@@ -1,0 +1,119 @@
+﻿@model IEnumerable<maintenanceApplication.Models.Maintenance.MaintenanceModel>
+
+@{
+    ViewBag.Title = "Get All Auality MAintenace Requests";
+}
+
+@{
+    Layout = null;
+}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tab-pane active" id="1b">
+                <table class="display" id="quality_table">
+                    <thead>
+                        <tr>
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                Date
+                            </th>
+                            <th>
+                                Serial No
+                            </th>
+                            <th>
+                                Model
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Phone 1
+                            </th>
+                            <th>
+                                Phone 2
+                            </th>
+                            <th>
+                                Priority
+                            </th>
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Repeated
+                            </th>
+
+
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreationDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Device_SerialNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Device_Model)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Customer_Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Customer_Phone_1)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Customer_Phone_2)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.priority.PriorityName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.status.StatusName)
+                            </td>
+
+                            @if (item.isRepeated == true)
+                            {
+                                <td>
+                                    <div style="background:#ff0000;width:30px;height:30px;border-radius:30px;margin-left:30%;"></div>
+                                </td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                         
+
+                            <td>
+                                @Html.ActionLink("Actions", "Maintenance_Quality_CheckActions", new { id = item.Id })
+                                @*|@Html.ActionLink("Details", "getMaintenanceDetails", new { id = item.Id })*@
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+            </div>
+
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $('#quality_table').DataTable();
+                var table = $('#quality_table').DataTable();
+            });
+
+
+        </script>

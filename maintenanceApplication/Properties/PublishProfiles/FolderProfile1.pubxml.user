@@ -35,7 +35,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/31/2020 02:23:30</publishTime>
     </File>
     <File Include="assets/images/city.png">
-      <publishTime>06/14/2020 00:22:42</publishTime>
+      <publishTime>07/22/2020 22:58:16</publishTime>
     </File>
     <File Include="assets/images/clients.png">
       <publishTime>05/23/2020 20:49:58</publishTime>
@@ -392,7 +392,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/Ar/maintenanceApplication.resources.dll">
-      <publishTime>07/21/2020 16:47:57</publishTime>
+      <publishTime>07/23/2020 00:18:56</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/23/2017 13:15:18</publishTime>
@@ -401,10 +401,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/23/2017 13:15:20</publishTime>
     </File>
     <File Include="bin/maintenanceApplication.dll">
-      <publishTime>07/21/2020 16:47:57</publishTime>
+      <publishTime>07/23/2020 00:18:56</publishTime>
     </File>
     <File Include="bin/maintenanceApplication.pdb">
-      <publishTime>07/21/2020 16:47:57</publishTime>
+      <publishTime>07/23/2020 00:18:56</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>11/25/2019 10:57:50</publishTime>
@@ -3845,25 +3845,25 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/29/2020 04:23:24</publishTime>
     </File>
     <File Include="Views/Account/ExternalLoginConfirmation.cshtml">
-      <publishTime>07/21/2020 14:52:26</publishTime>
+      <publishTime>07/22/2020 23:05:17</publishTime>
     </File>
     <File Include="Views/Account/ExternalLoginFailure.cshtml">
       <publishTime>05/29/2020 04:23:24</publishTime>
     </File>
     <File Include="Views/Account/ForgotPassword.cshtml">
-      <publishTime>07/21/2020 14:52:27</publishTime>
+      <publishTime>07/22/2020 18:31:34</publishTime>
     </File>
     <File Include="Views/Account/ForgotPasswordConfirmation.cshtml">
       <publishTime>05/29/2020 04:23:24</publishTime>
     </File>
     <File Include="Views/Account/Login.cshtml">
-      <publishTime>07/21/2020 14:52:28</publishTime>
+      <publishTime>07/22/2020 22:52:30</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
       <publishTime>07/21/2020 15:24:46</publishTime>
     </File>
     <File Include="Views/Account/ResetPassword.cshtml">
-      <publishTime>05/29/2020 04:23:24</publishTime>
+      <publishTime>07/22/2020 18:32:07</publishTime>
     </File>
     <File Include="Views/Account/ResetPasswordConfirmation.cshtml">
       <publishTime>06/01/2020 22:37:42</publishTime>
@@ -3880,8 +3880,17 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Account/_ExternalLoginsListPartial.cshtml">
       <publishTime>05/29/2020 04:23:24</publishTime>
     </File>
+    <File Include="Views/Admin/AssignRole.cshtml">
+      <publishTime>07/23/2020 01:51:19</publishTime>
+    </File>
+    <File Include="Views/Admin/CreateUser.cshtml">
+      <publishTime>07/22/2020 23:35:51</publishTime>
+    </File>
+    <File Include="Views/Admin/CreteRole.cshtml">
+      <publishTime>07/23/2020 00:18:32</publishTime>
+    </File>
     <File Include="Views/Admin/Index.cshtml">
-      <publishTime>06/30/2020 00:29:28</publishTime>
+      <publishTime>07/22/2020 23:52:50</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>05/29/2020 04:22:44</publishTime>
@@ -3893,10 +3902,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/02/2020 15:05:54</publishTime>
     </File>
     <File Include="Views/Home/Sections.cshtml">
-      <publishTime>07/13/2020 05:08:29</publishTime>
+      <publishTime>07/22/2020 23:47:09</publishTime>
     </File>
     <File Include="Views/MainCusomerCity/adminSeetings.cshtml">
-      <publishTime>07/07/2020 15:53:36</publishTime>
+      <publishTime>07/22/2020 17:50:00</publishTime>
     </File>
     <File Include="Views/MainCusomerCity/Create.cshtml">
       <publishTime>07/11/2020 17:05:23</publishTime>
@@ -4061,10 +4070,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/29/2020 04:23:24</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>07/20/2020 18:04:18</publishTime>
+      <publishTime>07/22/2020 14:50:54</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutLogin.cshtml">
-      <publishTime>06/03/2020 15:11:36</publishTime>
+      <publishTime>07/21/2020 18:16:51</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>06/03/2020 00:52:00</publishTime>
@@ -4079,7 +4088,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/29/2020 04:22:44</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/21/2020 16:50:05</publishTime>
+      <publishTime>07/23/2020 01:55:41</publishTime>
     </File>
   </ItemGroup>
 </Project>

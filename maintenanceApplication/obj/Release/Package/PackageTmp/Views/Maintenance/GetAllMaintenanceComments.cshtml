@@ -1,0 +1,67 @@
+﻿@model  IEnumerable<maintenanceApplication.Models.Maintenance.MaintenanceCommentsModel>
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("Add_Maintenance_Comment", "Maintenance"))
+{
+
+    <div class="col-md-4" style="margin-top:30px;">
+        <div class="card" style="overflow:scroll; overflow-x:hidden;  max-height:515px;">
+            <div class="tab-content">
+                <div class="tab-pane active" id="home" role="tabpanel" style="margin-bottom:-50px">
+                    <div class="card-block">
+
+                        @if (Convert.ToInt32(ViewData["count"]) == 0)
+                        {
+                            <style>
+                                hr {
+                                    margin-top: 0px !important;
+                                }
+                            </style>
+
+                            <p class="text-left text text-blue ">Maintennace Activity</p>
+
+                            <p class="text-body" style="margin-top:20px;"> No Comments Found  </p>
+
+                        }
+                        @if (Convert.ToInt32(ViewData["count"]) > 0)
+                        {
+                            <p class="text-left text text-blue">Maintennace Activity</p>
+
+                            foreach (var item in Model)
+                            {
+                                @Html.HiddenFor(model => item.user_Id)
+
+                    <div class="profiletimeline">
+                        <div class="sl-item">
+                            <div class="sl-left"> <img style="width:10%;" src="../../assets/images/users/3.jpg" alt="user" class="img-circle"> </div>
+                            <div class="sl-right">
+                                <div>
+                                    <a href="#" class="link">@item.user_Id</a> <span class="sl-date">@item.comment_DateTme</span>
+                                    <p class="m-t-10"> @item.comment</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                    </div>
+                            }
+                        }
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="header">
+                @{
+                    Html.RenderAction("Add_Maintenance_Comment");
+                }
+            </div>
+        </div>
+
+
+    </div>
+}
