@@ -184,6 +184,10 @@
     <Compile Include="Migrations\202007110950446__intiate.Designer.cs">
       <DependentUpon>202007110950446__intiate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007221436312_remove_email.cs" />
+    <Compile Include="Migrations\202007221436312_remove_email.Designer.cs">
+      <DependentUpon>202007221436312_remove_email.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -1488,6 +1492,9 @@
     <Content Include="Views\Report\ReparingCheq.cshtml" />
     <Content Include="Views\Report\PrintDeliverReport.cshtml" />
     <Content Include="Views\Report\TechnicalReport.cshtml" />
+    <Content Include="Views\Admin\CreateUser.cshtml" />
+    <Content Include="Views\Admin\AssignRole.cshtml" />
+    <Content Include="Views\Admin\CreteRole.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1509,6 +1516,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202007110950446__intiate.resx">
       <DependentUpon>202007110950446__intiate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007221436312_remove_email.resx">
+      <DependentUpon>202007221436312_remove_email.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resource.Ar.resx" />
     <EmbeddedResource Include="Resource.resx">

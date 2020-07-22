@@ -70,9 +70,8 @@ namespace maintenanceApplication
                     context.SaveChanges();
                 }
             }
-
-
         }
+
         private void CreateUSerAndRoles()
         {
             ApplicationDbContext context = new ApplicationDbContext();
@@ -86,7 +85,7 @@ namespace maintenanceApplication
 
                 //Create Default user 
                 var user = new ApplicationUser();
-                user.UserName = "admin@admin.com";
+                user.UserName = "superadmin";
                 user.Email = "admin@admin.com";
                 string pwd = "Omak@2020";
 
@@ -95,9 +94,7 @@ namespace maintenanceApplication
                 {
                     userManager.AddToRole(user.Id, "SuperAdmin");
                 }
-
             }
-
         }
     }
 }

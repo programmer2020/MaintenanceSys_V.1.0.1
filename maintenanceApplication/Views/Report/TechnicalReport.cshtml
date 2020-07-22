@@ -133,7 +133,7 @@
                 <table class="table table-print">
                     <thead style="background-color: #c8c8c8;">
                         <tr>
-
+                          
                             <th scope="col">Start Checking Date</th>
                             <th scope="col">Complete Checking Date</th>
                             <th scope="col">Approval Date</th>
@@ -209,19 +209,19 @@
                     </tbody>
                 </table>
 
-                @*<table class="table table-print">
-            <thead style="background-color: #c8c8c8;">
-                <tr>
-                    <th scope="col">Client Remarks</th>
+                <table class="table table-print">
+                    <thead style="background-color: #c8c8c8;">
+                        <tr>
+                            <th scope="col">Client Remarks</th>
 
-                </tr>
-            </thead>
-            <tbody>
-                <tr style="height:100px;">
-                    <td rowspan="3" colspan="4">@Html.DisplayFor(model => model.ClientRemarks)</td>
-                </tr>
-            </tbody>
-        </table>*@
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="height:100px;">
+                            <td rowspan="3" colspan="4">@Html.DisplayFor(model => model.ClientRemarks)</td>
+                        </tr>
+                    </tbody>
+                </table>
 
                 <table class="table table-print">
                     <thead style="background-color: #c8c8c8;">
@@ -265,11 +265,11 @@
                             {
                                 foreach (var comment in TempData["allComments"] as IEnumerable<maintenanceApplication.Models.Maintenance.MaintenanceCommentsModel>)
                                 {
-                                    <tr>
-                                        <td>@comment.comment</td>
-                                        <td>@comment.user_Id</td>
-                                        <td>@comment.comment_DateTme</td>
-                                    </tr>
+                                                <tr>
+                                                    <td>@comment.comment</td>
+                                                    <td>@comment.user_Id</td>
+                                                    <td>@comment.comment_DateTme</td>
+                                                </tr>
                                 }
                             }
                             catch
@@ -280,12 +280,6 @@
                         }
                         </tbody>
                     </table>
-
-
-                    @Html.LabelFor(model => model.ClientRemarks, htmlAttributes: new { @class = "control-label col-md-3" })
-                    @Html.TextAreaFor(model => model.ClientRemarks, new { @class = "form-control", @style = "height:200px;", @disabled = "disabled" })
-
-
 
                     <div class="col-md-3"></div>
                     <button class="print-link no-print btn btn-success col-md-6" style="margin:50px 0 100px 0;" onclick="jQuery('#bill_print').print()">Print</button>

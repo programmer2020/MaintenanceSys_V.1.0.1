@@ -8,6 +8,7 @@ using System.Web.Mvc;
 namespace maintenanceApplication.Controllers
 {
     //[BasicAttributes]
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -20,7 +21,7 @@ namespace maintenanceApplication.Controllers
             return View ();
         }
 
-        [Authorize(Users = "admin@admin.com")]
+        //[Authorize(Users = "admin@admin.com")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -28,7 +29,7 @@ namespace maintenanceApplication.Controllers
             return View();
         }
 
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
