@@ -9,6 +9,10 @@ namespace maintenanceApplication.Controllers
 {
     //[BasicAttributes]
     [Authorize]
+    //[OutputCache(Duration = 50, Location = System.Web.UI.OutputCacheLocation.Client)]
+    //[OutputCache(Duration = 50, Location = System.Web.UI.OutputCacheLocation.Server)]
+    [OutputCache(Duration = 0  , NoStore = true)]
+
     public class HomeController : Controller
     {
         public ActionResult Index()

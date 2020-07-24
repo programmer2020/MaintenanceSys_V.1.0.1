@@ -13,11 +13,14 @@ using maintenanceApplication.Models.Maintenance;
 using maintenanceApplication.Models.Maintenance.lookups;
 using System.Data.Entity.Migrations;
 using System.Threading.Tasks;
+using System.Runtime.Caching;
 
 namespace maintenanceApplication.Controllers
 {
     //[Authorize]
     //[AllowAnonymous]
+    //[OutputCache (Duration =50 , Location =System.Web.UI.OutputCacheLocation.Server , VaryByParam ="*")]
+
     public class MaintenanceController : Controller
     {
         private ApplicationDbContext _context;
@@ -27,14 +30,15 @@ namespace maintenanceApplication.Controllers
             _context = new ApplicationDbContext();
             var allComments = _context.maintenceComments.ToList();
             ViewData["commentList"] = allComments;
-        }   
+        }
+
 
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
         }
 
-        public ActionResult MAintenaceHome()
+        public ActionResult MAintenaceHome()    
         {
             return View("MaintenanceHome"); 
         }
@@ -43,8 +47,8 @@ namespace maintenanceApplication.Controllers
         public ActionResult GetNewMaintenanceRequests()
         {
             var getStatusId = _context.status.SingleOrDefault(x => x.StatusName == "New Request"); 
-            var maintenance_requests = _context.maintenance.Where(x=>x.MaintenanceStatusModelId == getStatusId.Id && x.isDeleted == false).OrderByDescending(x => x.Id).Include(x => x.priority).Include(x => x.status).ToList();
-            
+            var maintenance_requests = _context.maintenance.Where(x => x.MaintenanceStatusModelId == getStatusId.Id && x.isDeleted == false).OrderByDescending(x => x.Id).Include(x => x.priority).Include(x => x.status).ToList();
+
             ViewBag.noLayout = 1; 
             return View("GetMaintenanceRequests", maintenance_requests);
         }
@@ -76,8 +80,6 @@ namespace maintenanceApplication.Controllers
             maintenanceApproved.MaintenanceStatusModelId = maintenanceStatus.Id;
             maintenanceApproved.StartReparingDate = DateTime.UtcNow;
             maintenanceApproved.TechnicalReport = maintenance.TechnicalReport;
-            //maintenanceApproved.ClientRemarks = maintenance.ClientRemarks;
-
             var Refunded_viewModel = new MaintenanceCreteViewModel
             {
                 maintenance = maintenanceApproved,
@@ -85,7 +87,6 @@ namespace maintenanceApplication.Controllers
             ViewData["mainId"] = maintenanceApproved.Id;
             _context.maintenance.AddOrUpdate(maintenanceApproved);
             _context.SaveChanges();
-
             return RedirectToAction("GetNewMaintenanceRequests");
 
         }

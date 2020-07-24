@@ -56,9 +56,9 @@ namespace maintenanceApplication
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "758529044908251",
+               appSecret: "e7151e2051b3347e93b9fb0d33a68540");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

@@ -40,10 +40,7 @@ namespace maintenanceApplication
                 statusList.Add("Quality Check");
                 statusList.Add("To be Delivered");
                 statusList.Add("Delivered");
-
-                //Checking Started
-                // Check Completed
-                //statusList.Add("Quality approved");
+              
                 var status = new MaintenanceStatusModel();
                 foreach (string statusItem in statusList)
                 {
@@ -52,8 +49,6 @@ namespace maintenanceApplication
                     context.SaveChanges();
                 }
             }
-
-
             //Adding Priority
             var prorityData = context.priority.ToList();
             if (prorityData.Count < 1)
@@ -86,8 +81,8 @@ namespace maintenanceApplication
                 //Create Default user 
                 var user = new ApplicationUser();
                 user.UserName = "superadmin";
-                user.Email = "admin@admin.com";
-                string pwd = "Omak@2020";
+                user.Email = "super@admin.com";
+                string pwd = "admin@2020";
 
                 var newUser = userManager.Create(user, pwd);
                 if (newUser.Succeeded)

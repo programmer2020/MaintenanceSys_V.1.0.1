@@ -210,6 +210,9 @@ C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\bin\Microsoft.
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\maintenanceApplication.csprojAssemblyReference.cache
+C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\maintenanceApplication.Migrations._intiate.resources
+C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\maintenanceApplication.Migrations.remove_email.resources
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\maintenanceApplication.Resource.resources
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\maintenanceApplication.Resource.Ar.resources
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\maintenanceApplication.csproj.GenerateResource.cache
@@ -218,6 +221,8 @@ C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\Ar
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\maintenanceApplication.csproj.CopyComplete
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\maintenanceApplication.dll
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\maintenanceApplication.pdb
-C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\maintenanceApplication.Migrations._intiate.resources
-C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\maintenanceApplication.csprojAssemblyReference.cache
-C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\maintenanceApplication.Migrations.remove_email.resources
+C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\bin\Glimpse.Ado.dll
+C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\bin\Glimpse.AspNet.dll
+C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\bin\Glimpse.Core.dll
+C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\bin\Glimpse.EF6.dll
+C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\bin\Glimpse.Mvc5.dll
