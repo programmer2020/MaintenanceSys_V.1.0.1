@@ -91,12 +91,24 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.maintenance.status.StatusName, "Status Name", htmlAttributes: new { @class = "control-label col-md-3" })
-                    <div class="col-md-9">
-                        @Html.DropDownListFor(m => m.maintenance.MaintenanceStatusModelId, new SelectList(Model.maintenancestatus, "Id", "StatusName"), htmlAttributes: new { @class = "form-control" })
+                @if (User.IsInRole(RolesName.Supervisor))
+                {
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.maintenance.status.StatusName, "Status Name", htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.maintenance.status.StatusName, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+                        </div>
                     </div>
-                </div>
+                }
+                else
+                {
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.maintenance.status.StatusName, "Status Name", htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.DropDownListFor(m => m.maintenance.MaintenanceStatusModelId, new SelectList(Model.maintenancestatus, "Id", "StatusName"), htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                }
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.maintenance.userName, htmlAttributes: new { @class = "control-label col-md-3", disabled = "disabled" })
@@ -202,7 +214,16 @@
                     </div>
                 }
 
-                <div style="margin-left:20%;width:100%;">
+            <div style="margin-left:20%;width:100%;">
+                @if (User.IsInRole(RolesName.Supervisor))
+                {
+                    <input type="submit" class="btn btn-info" formaction="/Report/ReparingCheq/@ViewData["mainId"]" value="Print Recipt"
+                           formmethod="post" />
+
+                    <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning ">Cancel</a>
+                }
+                else
+                {
                     <input type="submit" class="btn btn-primary" formaction="/Maintenance/updateUnderReparing/@ViewData["mainId"]" value="Save"
                            formmethod="post" />
 
@@ -219,8 +240,8 @@
                            formmethod="post" />
 
                     <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning ">Cancel</a>
-
-                </div>
+                }
+            </div>
 
             </div>
             }

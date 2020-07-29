@@ -225,6 +225,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="RolesName.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\maintenance\MaintenanceCreteViewModel.cs" />
     <Compile Include="ViewModels\maintenance\MaintenancesingleViewModel.cs" />
@@ -1461,7 +1462,7 @@
     <Content Include="Views\Maintenance\MaintenanceTechnicalReport2.cshtml" />
     <Content Include="Views\Maintenance\MaintenanceForm.cshtml" />
     <Content Include="Views\Maintenance\getMaintenanceDetailsById.cshtml" />
-    <Content Include="Views\Maintenance\GetMaintenanceRequests.cshtml" />
+    <Content Include="Views\Maintenance\Guset\GetMaintenanceRequests.cshtml" />
     <Content Include="Views\Account\UsersList.cshtml" />
     <Content Include="Views\Home\Sections.cshtml" />
     <Content Include="Views\Maintenance\Maintenance_QualityCheckDeleted.cshtml" />
@@ -1493,7 +1494,7 @@
     <Content Include="Views\MainCusomerCity\Edit.cshtml" />
     <Content Include="Views\MainCusomerCity\Index.cshtml" />
     <Content Include="Views\Maintenance\Maintenance_Activity.cshtml" />
-    <Content Include="Views\Maintenance\Maintenance_ViewData.cshtml" />
+    <Content Include="Views\Maintenance\Admin\Maintenance_ViewData.cshtml" />
     <Content Include="Views\Maintenance\GetAllMaintenanceComments.cshtml" />
     <Content Include="Views\Maintenance\GetCheckingStartedRequests.cshtml" />
     <Content Include="Views\Maintenance\Maintennace_CheckingStarted_ActionView.cshtml" />
@@ -1512,6 +1513,14 @@
     <Content Include="Views\Admin\CreateUser.cshtml" />
     <Content Include="Views\Admin\AssignRole.cshtml" />
     <Content Include="Views\Admin\CreteRole.cshtml" />
+    <Content Include="Views\Maintenance\SuperAdmin\GetMaintenanceRequests.cshtml" />
+    <Content Include="Views\Maintenance\Supervisor\GetMaintenanceRequests.cshtml" />
+    <Content Include="Views\Maintenance\Technical\GetMaintenanceRequests.cshtml" />
+    <Content Include="Views\Maintenance\Admin\GetMaintenanceRequests.cshtml" />
+    <Content Include="Views\Maintenance\Guset\Maintenance_ViewData.cshtml" />
+    <Content Include="Views\Maintenance\SuperAdmin\Maintenance_ViewData.cshtml" />
+    <Content Include="Views\Maintenance\Supervisor\Maintenance_ViewData.cshtml" />
+    <Content Include="Views\Maintenance\Technical\Maintenance_ViewData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

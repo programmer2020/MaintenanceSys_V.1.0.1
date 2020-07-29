@@ -109,10 +109,8 @@
                                         <td>
                                             @Html.ActionLink("Actions", "EditMaintenance", new { id = item.Id })
                                         </td>
-                                        @if (User.Identity.IsAuthenticated && User.IsInRole(RolesName.SuperAdmin))
-                                        {
+                                        
                                             <td><button data-maintenance-id="@item.Id" onclick="DeleteMaintenanceRecord(@item.Id)" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i></button></td>
-                                        }
                                     </tr>
                                     }
                                 </tbody>

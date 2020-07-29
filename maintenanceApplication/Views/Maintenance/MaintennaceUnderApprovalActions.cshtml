@@ -101,12 +101,24 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.maintenance.status.StatusName, "Status Name", htmlAttributes: new { @class = "control-label col-md-3" })
-                    <div class="col-md-9">
-                        @Html.DropDownListFor(m => m.maintenance.MaintenanceStatusModelId, new SelectList(Model.maintenancestatus, "Id", "StatusName"), htmlAttributes: new { @class = "form-control" })
+                @if (User.IsInRole(RolesName.Supervisor))
+                {
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.maintenance.status.StatusName, "Status Name", htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.TextBoxFor(model => model.maintenance.status.StatusName, new { @class = "form-control", disabled = "disabled" })
+                        </div>
                     </div>
-                </div>
+                }
+                else
+                {
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.maintenance.status.StatusName, "Status Name", htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.DropDownListFor(m => m.maintenance.MaintenanceStatusModelId, new SelectList(Model.maintenancestatus, "Id", "StatusName"), htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                }
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.maintenance.userName, htmlAttributes: new { @class = "control-label col-md-3", disabled = "disabled" })
@@ -220,21 +232,33 @@
 
             <div class="col-md-12" style="margin-bottom:100px;margin-top:30px;">
                 <div class="col-md-3"></div>
-                <input type="submit" class="btn btn-primary" formaction="/Maintenance/updateUnderApproval/@ViewData["mainId"]" value="Save"
-                       formmethod="post" />
-                <input type="submit" class="btn btn-success" formaction="/Maintenance/Maintennace_Approve_Request_Action/@ViewData["mainId"]" value="Approve"
-                       formmethod="post" />
-                <input type="submit" class="btn btn-danger" formaction="/Maintenance/Maintennace_Rject_Request_Action/@ViewData["mainId"]" value="Reject"
-                       formmethod="post" />
+                @if (User.IsInRole(RolesName.Supervisor))
+                {
+                    <input type="submit" class="btn btn-danger" formaction="/Maintenance/Maintennace_Rject_Request_Action/@ViewData["mainId"]" value="Reject"
+                           formmethod="post" />
 
-                <input type="submit" class="btn btn-info" formaction="/Report/ReparingCheq/@ViewData["mainId"]" value="Print Recipt"
-                       formmethod="post" />
+                    <input type="submit" class="btn btn-info" formaction="/Report/ReparingCheq/@ViewData["mainId"]" value="Print Recipt"
+                           formmethod="post" />
 
-                <input type="submit" class="btn btn-dark" formaction="/Report/TechnicalReport/@ViewData["mainId"]" value="Technical Report"
-                       formmethod="post" />
+                    <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning form-group" style="margin-left:1%;">Cancel</a>
+                }
+                else
+                {
+                    <input type="submit" class="btn btn-primary" formaction="/Maintenance/updateUnderApproval/@ViewData["mainId"]" value="Save"
+                           formmethod="post" />
+                    <input type="submit" class="btn btn-success" formaction="/Maintenance/Maintennace_Approve_Request_Action/@ViewData["mainId"]" value="Approve"
+                           formmethod="post" />
+                    <input type="submit" class="btn btn-danger" formaction="/Maintenance/Maintennace_Rject_Request_Action/@ViewData["mainId"]" value="Reject"
+                           formmethod="post" />
 
-                <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning form-group" style="margin-left:1%;">Cancel</a>
+                    <input type="submit" class="btn btn-info" formaction="/Report/ReparingCheq/@ViewData["mainId"]" value="Print Recipt"
+                           formmethod="post" />
 
+                    <input type="submit" class="btn btn-dark" formaction="/Report/TechnicalReport/@ViewData["mainId"]" value="Technical Report"
+                           formmethod="post" />
+
+                    <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning form-group" style="margin-left:1%;">Cancel</a>
+                }
 
 
             </div>

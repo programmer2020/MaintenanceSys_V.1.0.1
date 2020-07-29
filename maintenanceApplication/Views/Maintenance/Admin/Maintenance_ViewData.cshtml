@@ -2,16 +2,15 @@
 @{
     ViewBag.Title = "CreateNewMaintenanceRequest";
 }
-        <div class="col-md-6">
-            <h4 class="text text-info">New Request</h4>
-            <hr />
-            @Html.ValidationSummary("", new { @class = "text-danger" })
+<div class="col-md-6">
+    <h4 class="text text-info">New Request</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
 
-            @using (Html.BeginForm("EditMaintenance", "Maintenance"))
-            {
-                @Html.AntiForgeryToken()
+    @using (Html.BeginForm("EditMaintenance", "Maintenance"))
+    {
+        @Html.AntiForgeryToken()
         <div class="form-horizontal">
-
 
             <div class="form-group">
                 @Html.LabelFor(model => model.maintenance.Customer_Name, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -20,14 +19,12 @@
                 </div>
             </div>
 
-
             <div class="form-group">
                 @Html.LabelFor(model => model.maintenance.Customer_Phone_1, htmlAttributes: new { @class = "control-label col-md-3" })
                 <div class="col-md-9">
                     @Html.EditorFor(model => model.maintenance.Customer_Phone_1, new { htmlAttributes = new { @class = "form-control" } })
                 </div>
             </div>
-
 
             <div class="form-group">
                 @Html.LabelFor(model => model.maintenance.Customer_Phone_2, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -42,7 +39,6 @@
                     @Html.EditorFor(model => model.maintenance.CustomerCity.CustomerCity, new { htmlAttributes = new { @class = "form-control" } })
                 </div>
             </div>
-
 
             <div class="form-group">
                 @Html.LabelFor(model => model.maintenance.Customer_Adress, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -81,20 +77,6 @@
                 </div>
             </div>
 
-            @*<div class="form-group">
-            @Html.LabelFor(model => model.maintenance.Recommendations, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-9">
-                @Html.TextAreaFor(model => model.maintenance.Recommendations, new { @class = "form-control", @style = "height : 200px" })
-            </div>
-        </div>*@
-
-            @*<div class="form-group">
-            @Html.LabelFor(model => model.maintenance.priority.PriorityName, "Priority Name", htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-9">
-                @Html.EditorFor(model => model.maintenance.priority.PriorityName, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
-        </div>*@
-
             <div class="form-group">
                 @Html.LabelFor(model => model.maintenance.priority.PriorityName, "Priority Name", htmlAttributes: new { @class = "control-label col-md-3" })
                 <div class="col-md-9">
@@ -103,12 +85,15 @@
 
             </div>
 
+
             <div class="form-group">
                 @Html.LabelFor(model => model.maintenance.status.StatusName, "Status Name", htmlAttributes: new { @class = "control-label col-md-3" })
                 <div class="col-md-9">
                     @Html.DropDownListFor(m => m.maintenance.MaintenanceStatusModelId, new SelectList(Model.maintenancestatus, "Id", "StatusName"), htmlAttributes: new { @class = "form-control" })
+
                 </div>
             </div>
+
 
             <div class="form-group">
                 @Html.LabelFor(model => model.maintenance.userName, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -126,7 +111,6 @@
                     </div>
                 </div>
             }
-
 
             @if (Model.maintenance.StartCheckingDate != null)
             {
@@ -158,7 +142,6 @@
                 </div>
             }
 
-
             @if (Model.maintenance.Actual_Repair_Date != null)
             {
                 <div class="form-group">
@@ -188,7 +171,6 @@
                     </div>
                 </div>
             }
-
 
             @if (Model.maintenance.Deliver_Date != null)
             {
@@ -220,6 +202,7 @@
 
             <div class="col-md-12" style="margin-bottom:100px;margin-top:30px;margin-left:20%;">
                 <div class="cold-md-9">
+
                     <input type="submit" name="EditMaintenance" class="btn btn-primary" value="Save" id="updateBtn"
                            formaction="/Maintenance/EditMaintenance/@ViewData["mainId"]" formmethod="post" />
                     <input type="submit" class="btn btn-success" formaction="/Maintenance/Start_Checking/@ViewData["mainId"]" value="Start Checking"
@@ -233,25 +216,26 @@
                     <input type="submit" class="btn btn-dark" formaction="/Report/TechnicalReport/@ViewData["mainId"]" value="Technical Report"
                            formmethod="post" />
                     <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning ">Cancel</a>
+
                 </div>
             </div>
 
         </div>
 
-            }
-        </div>
+    }
+</div>
 
-        @{
-            try
-            {
-                Html.RenderAction("GetAllMAintenanceComments", new { id = @ViewData["mainId"] });
+@{
+    try
+    {
+        Html.RenderAction("GetAllMAintenanceComments", new { id = @ViewData["mainId"] });
 
-            }
-            catch
-            {
+    }
+    catch
+    {
 
-            }
-        }   
+    }
+}
 
 
 @*@{
@@ -259,6 +243,6 @@
     }*@
 
 @*@section Scripts
-{
-    @Scripts.Render("~/bundles/jqueryval");
-}*@
+    {
+        @Scripts.Render("~/bundles/jqueryval");
+    }*@

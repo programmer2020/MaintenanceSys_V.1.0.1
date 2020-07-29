@@ -48,11 +48,28 @@ namespace maintenanceApplication.Controllers
         {
             var getStatusId = _context.status.SingleOrDefault(x => x.StatusName == "New Request"); 
             var maintenance_requests = _context.maintenance.Where(x => x.MaintenanceStatusModelId == getStatusId.Id && x.isDeleted == false).OrderByDescending(x => x.Id).Include(x => x.priority).Include(x => x.status).ToList();
+            ViewBag.noLayout = 1;
+            if (User.IsInRole("SuperAdmin"))
+            {
+                return View("~/Views/Maintenance/SuperAdmin/GetMaintenanceRequests.cshtml", maintenance_requests);
+            }
+            else if (User.IsInRole("Admin"))
+            {
+                return View("~/Views/Maintenance/Admin/GetMaintenanceRequests.cshtml", maintenance_requests);
+            }else if (User.IsInRole("Supervisor"))
+            {
+                return View("~/Views/Maintenance/Supervisor/GetMaintenanceRequests.cshtml", maintenance_requests);
+            }else if (User.IsInRole("Technical"))
+            {
+                return View("~/Views/Maintenance/Technical/GetMaintenanceRequests.cshtml", maintenance_requests);
+            }
+            else
+            {
+                return View("~/Views/Maintenance/Guset/GetMaintenanceRequests.cshtml", maintenance_requests);
+            }
 
-            ViewBag.noLayout = 1; 
-            return View("GetMaintenanceRequests", maintenance_requests);
         }
-      
+
         //Approve Under checked Request
         public ActionResult Checked_Done(MaintenanceModel maintenance)
         {
@@ -185,7 +202,28 @@ namespace maintenanceApplication.Controllers
                 //users = _context.user
             };
             ViewData["mainId"] = maintenanceEdit.Id;
-            return View("Maintenance_ViewData", update_viewModel);
+
+            if (User.IsInRole("SuperAdmin"))
+            {
+                return View("~/Views/Maintenance/SuperAdmin/Maintenance_ViewData.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Admin"))
+            {
+                return View("~/Views/Maintenance/Admin/Maintenance_ViewData.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Supervisor"))
+            {
+                return View("~/Views/Maintenance/Supervisor/Maintenance_ViewData.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Technical"))
+            {
+                return View("~/Views/Maintenance/Technical/Maintenance_ViewData.cshtml", update_viewModel);
+            }
+            else
+            {
+                return View("~/Views/Maintenance/Guset/Maintenance_ViewData.cshtml", update_viewModel);
+            }
+
         }
 
         [HttpPost]

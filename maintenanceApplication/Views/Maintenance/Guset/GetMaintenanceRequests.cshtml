@@ -49,6 +49,7 @@
                                         <th>
                                             Priority
                                         </th>
+                                        
                                         <th>
                                             Status
                                         </th>
@@ -65,51 +66,51 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                        <tr id="row_@item.Id">
-                                            @Html.HiddenFor(modelItem => item.Id, new { @id = "mainId" })
+                                    <tr id="row_@item.Id">
+                                        @Html.HiddenFor(modelItem => item.Id, new { @id = "mainId" })
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Id)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CreationDate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Device_SerialNumber)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Device_Model)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Customer_Name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Customer_Phone_1)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Customer_Phone_2)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.priority.PriorityName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.status.StatusName)
+                                        </td>
+                                        @if (item.isRepeated == true)
+                                        {
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.Id)
+                                                <div style="background:#ff0000;width:30px;height:30px;border-radius:30px;margin-left:30%;"></div>
                                             </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.CreationDate)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Device_SerialNumber)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Device_Model)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Customer_Name)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Customer_Phone_1)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Customer_Phone_2)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.priority.PriorityName)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.status.StatusName)
-                                            </td>
-                                            @if (item.isRepeated == true)
-                                            {
-                                                <td>
-                                                    <div style="background:#ff0000;width:30px;height:30px;border-radius:30px;margin-left:30%;"></div>
-                                                </td>
-                                            }
-                                            else
-                                            {
-                                                <td></td>
-                                            }
+                                        }
+                                        else
+                                        {
+                                            <td></td>
+                                        }
 
-                                            <td>
-                                                @Html.ActionLink("Actions", "EditMaintenance", new { id = item.Id })
-                                            </td>
-                                            <td><button data-maintenance-id="@item.Id" onclick="DeleteMaintenanceRecord(@item.Id)" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i></button></td>
-                                        </tr>
+                                        <td>
+                                            @Html.ActionLink("Actions", "EditMaintenance", new { id = item.Id })
+                                        </td>
+                                       
+                                    </tr>
                                     }
                                 </tbody>
 

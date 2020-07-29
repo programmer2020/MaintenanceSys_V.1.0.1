@@ -1,21 +1,21 @@
 ﻿
-    <div class="row" style="margin-top:20px;">
-        <a href="/Maintenance/GetNewMaintenanceRequests">
-            <div class="col-md-3">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        Maintenace
-                        <span class="pull-right clickable panel-toggle"><em class="fa fa-toggle-up"></em></span>
-                    </div>
-                    <div class="panel-body" style="height:220px;">
-                        <img style="width:40%; margin-left:24%;" src="~/assets/images/maintenance-ht-bt.svg" class="img-fluid img-style" />
-                        @*@Html.ActionLink("Maintenance", "GetNewMaintenanceRequests", "Maintenance")*@
-                    </div>
+<div class="row" style="margin-top:20px;">
+    <a href="/Maintenance/GetNewMaintenanceRequests">
+        <div class="col-md-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Maintenace
+                    <span class="pull-right clickable panel-toggle"><em class="fa fa-toggle-up"></em></span>
+                </div>
+                <div class="panel-body" style="height:220px;">
+                    <img style="width:40%; margin-left:24%;" src="~/assets/images/maintenance-ht-bt.svg" class="img-fluid img-style" />
+                    @*@Html.ActionLink("Maintenance", "GetNewMaintenanceRequests", "Maintenance")*@
                 </div>
             </div>
-        </a>
+        </div>
+    </a>
 
-        @*<a href="/Account/Register">
+    @*<a href="/Account/Register">
             <div class="col-md-3">
                 <div class="panel panel-warning">
                     <div class="panel-heading">
@@ -30,31 +30,31 @@
         </a>*@
 
 
-        @*<span class="glyphicon glyphicon-user"></span>
+    @*<span class="glyphicon glyphicon-user"></span>
         <li class="nav-item navbarcolorLogin">@Html.ActionLink("Register New User", "index", "Admin", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
 
-        @{
-            if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
-            {
+    @{
+        if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+        {
 
-                <a href="/MainCusomerCity/GoToAdminSettingHome">
-                    <div class="col-md-3">
-                        <div class="panel panel-danger">
-                            <div class="panel-heading">
-                                Admin Settings
-                                <span class="pull-right clickable panel-toggle"><em class="fa fa-toggle-up"></em></span>
-                            </div>
-                            <div class="panel-body" style="height:220px;">
-                                <img style="width:40%; margin-left:24%;" src="~/assets/images/Setting.png" class="img-fluid img-style" />
-                            </div>
+            <a href="/MainCusomerCity/GoToAdminSettingHome">
+                <div class="col-md-3">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            Admin Settings
+                            <span class="pull-right clickable panel-toggle"><em class="fa fa-toggle-up"></em></span>
+                        </div>
+                        <div class="panel-body" style="height:220px;">
+                            <img style="width:40%; margin-left:24%;" src="~/assets/images/Setting.png" class="img-fluid img-style" />
                         </div>
                     </div>
-                </a>
-            }
-
+                </div>
+            </a>
         }
 
-        @*<a href="/Report/ReparingCheqView">
+    }
+
+    @*<a href="/Report/ReparingCheqView">
             <div class="col-md-3">
                 <div class="panel panel-success">
                     <div class="panel-heading">
@@ -69,6 +69,6 @@
         </a>*@
 
 
-    </div>
+</div>
 
 

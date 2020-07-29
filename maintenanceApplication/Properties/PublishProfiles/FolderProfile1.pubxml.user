@@ -392,7 +392,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/Ar/maintenanceApplication.resources.dll">
-      <publishTime>07/23/2020 20:31:31</publishTime>
+      <publishTime>07/26/2020 02:32:54</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/23/2017 13:15:18</publishTime>
@@ -400,11 +400,26 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="bin/EntityFramework.SqlServer.dll">
       <publishTime>10/23/2017 13:15:20</publishTime>
     </File>
+    <File Include="bin/Glimpse.Ado.dll">
+      <publishTime>07/09/2014 15:25:56</publishTime>
+    </File>
+    <File Include="bin/Glimpse.AspNet.dll">
+      <publishTime>02/04/2014 11:55:26</publishTime>
+    </File>
+    <File Include="bin/Glimpse.Core.dll">
+      <publishTime>06/25/2014 16:08:12</publishTime>
+    </File>
+    <File Include="bin/Glimpse.EF6.dll">
+      <publishTime>10/29/2014 12:10:50</publishTime>
+    </File>
+    <File Include="bin/Glimpse.Mvc5.dll">
+      <publishTime>02/04/2014 11:55:28</publishTime>
+    </File>
     <File Include="bin/maintenanceApplication.dll">
-      <publishTime>07/23/2020 20:31:31</publishTime>
+      <publishTime>07/26/2020 02:32:54</publishTime>
     </File>
     <File Include="bin/maintenanceApplication.pdb">
-      <publishTime>07/23/2020 20:31:31</publishTime>
+      <publishTime>07/26/2020 02:32:54</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>11/25/2019 10:57:50</publishTime>
@@ -3902,10 +3917,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/02/2020 15:05:54</publishTime>
     </File>
     <File Include="Views/Home/Sections.cshtml">
-      <publishTime>07/22/2020 23:47:09</publishTime>
+      <publishTime>07/25/2020 11:39:14</publishTime>
     </File>
     <File Include="Views/MainCusomerCity/adminSeetings.cshtml">
-      <publishTime>07/22/2020 17:50:00</publishTime>
+      <publishTime>07/25/2020 11:44:30</publishTime>
     </File>
     <File Include="Views/MainCusomerCity/Create.cshtml">
       <publishTime>07/11/2020 17:05:23</publishTime>
@@ -3929,7 +3944,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/22/2020 20:27:50</publishTime>
     </File>
     <File Include="Views/Maintenance/ClientApproveMaintenanceRequest.cshtml">
-      <publishTime>07/20/2020 20:30:27</publishTime>
+      <publishTime>07/25/2020 23:37:56</publishTime>
     </File>
     <File Include="Views/Maintenance/GetAllApprovedRequests.cshtml">
       <publishTime>07/08/2020 16:27:12</publishTime>
@@ -3968,7 +3983,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/05/2020 08:39:58</publishTime>
     </File>
     <File Include="Views/Maintenance/GetMaintenanceRequests.cshtml">
-      <publishTime>07/20/2020 18:27:20</publishTime>
+      <publishTime>07/25/2020 12:02:22</publishTime>
     </File>
     <File Include="Views/Maintenance/GetRefundMaintenanceRequestDetails.cshtml">
       <publishTime>06/06/2020 08:07:38</publishTime>
@@ -3980,7 +3995,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/08/2020 16:26:54</publishTime>
     </File>
     <File Include="Views/Maintenance/MainteanceQualityCheck_ActionsView.cshtml">
-      <publishTime>07/20/2020 22:05:28</publishTime>
+      <publishTime>07/26/2020 02:20:41</publishTime>
     </File>
     <File Include="Views/Maintenance/MaintenanceDelivredActionView.cshtml">
       <publishTime>06/28/2020 01:55:40</publishTime>
@@ -3995,7 +4010,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/22/2020 20:27:50</publishTime>
     </File>
     <File Include="Views/Maintenance/MaintenanceToBeDelivredActionView.cshtml">
-      <publishTime>07/20/2020 22:17:05</publishTime>
+      <publishTime>07/26/2020 02:21:06</publishTime>
     </File>
     <File Include="Views/Maintenance/Maintenance_Activity.cshtml">
       <publishTime>06/11/2020 18:21:40</publishTime>
@@ -4004,22 +4019,22 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/02/2020 11:01:14</publishTime>
     </File>
     <File Include="Views/Maintenance/Maintenance_ViewData.cshtml">
-      <publishTime>07/20/2020 18:49:09</publishTime>
+      <publishTime>07/26/2020 14:43:25</publishTime>
     </File>
     <File Include="Views/Maintenance/MaintencePopup.cshtml">
       <publishTime>06/05/2020 09:59:12</publishTime>
     </File>
     <File Include="Views/Maintenance/MaintennaceUnderApprovalActions.cshtml">
-      <publishTime>07/20/2020 20:22:19</publishTime>
+      <publishTime>07/25/2020 23:38:28</publishTime>
     </File>
     <File Include="Views/Maintenance/Maintennace_CheckingStarted_ActionView.cshtml">
-      <publishTime>07/20/2020 20:15:52</publishTime>
+      <publishTime>07/26/2020 15:50:13</publishTime>
     </File>
     <File Include="Views/Maintenance/Maintennace_Delivred_ActionView.cshtml">
-      <publishTime>07/20/2020 21:59:52</publishTime>
+      <publishTime>07/26/2020 02:22:13</publishTime>
     </File>
     <File Include="Views/Maintenance/UnderReparingActionsView.cshtml">
-      <publishTime>07/20/2020 21:52:08</publishTime>
+      <publishTime>07/26/2020 00:48:30</publishTime>
     </File>
     <File Include="Views/Manage/AddPhoneNumber.cshtml">
       <publishTime>05/29/2020 04:23:24</publishTime>
@@ -4088,7 +4103,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/29/2020 04:22:44</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/23/2020 20:31:47</publishTime>
+      <publishTime>07/26/2020 15:42:38</publishTime>
     </File>
   </ItemGroup>
 </Project>

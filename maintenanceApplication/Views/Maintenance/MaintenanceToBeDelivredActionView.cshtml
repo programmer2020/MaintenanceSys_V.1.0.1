@@ -92,13 +92,26 @@
                     </div>
                 </div>
 
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.maintenance.status.StatusName, "Status Name", htmlAttributes: new { @class = "control-label col-md-3" })
-                    <div class="col-md-9">
-                        @Html.DropDownListFor(m => m.maintenance.MaintenanceStatusModelId, new SelectList(Model.maintenancestatus, "Id", "StatusName"), htmlAttributes: new { @class = "form-control" })
+                @if (User.IsInRole(RolesName.Supervisor))
+                {
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.maintenance.status.StatusName, "Status Name", htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.maintenance.status.StatusName, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+                        </div>
                     </div>
-                </div>
+                }
+                else
+                {
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.maintenance.status.StatusName, "Status Name", htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.DropDownListFor(m => m.maintenance.MaintenanceStatusModelId, new SelectList(Model.maintenancestatus, "Id", "StatusName"), htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                }
+
+
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.maintenance.userName, htmlAttributes: new { @class = "control-label col-md-3", disabled = "disabled" })
@@ -206,21 +219,39 @@
                 @Html.HiddenFor(model => model.maintenance.TechnicalReport)
                 @Html.HiddenFor(model => model.maintenance.Recommendations)
 
-                <div  style="margin-left:30%;width:100%;">
-                        <input type="submit" class="btn btn-primary" formaction="/Maintenance/updateToBeDelivred/@ViewData["mainId"]" value="Save"
-                               formmethod="post" />
+            <div style="margin-left:30%;width:100%;">
+                @if (User.IsInRole(RolesName.Supervisor))
+                {
 
-                        <input type="submit" name="deliver" class="btn btn-success" value="Delivered" id="deliver"
-                               formaction="/Maintenance/DeliverMaintenanceRequest/@ViewData["mainId"]" formmethod="post" />
+                    <input type="submit" name="deliver" class="btn btn-success" value="Delivered" id="deliver"
+                           formaction="/Maintenance/DeliverMaintenanceRequest/@ViewData["mainId"]" formmethod="post" />
 
-                        <input type="submit" class="btn btn-info" formaction="/Report/ReparingCheq/@ViewData["mainId"]" value="Print Recipt"
-                               formmethod="post" />
+                    <input type="submit" class="btn btn-info" formaction="/Report/ReparingCheq/@ViewData["mainId"]" value="Print Recipt"
+                           formmethod="post" />
 
-                        <input type="submit" class="btn btn-dark" formaction="/Report/TechnicalReport/@ViewData["mainId"]" value="Technical Report"
-                               formmethod="post" />
+                    <input type="submit" class="btn btn-dark" formaction="/Report/TechnicalReport/@ViewData["mainId"]" value="Technical Report"
+                           formmethod="post" />
 
-                        <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning form-group" style="margin-left:1%;">Cancel</a>
-                </div>
+                    <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning form-group" style="margin-left:1%;">Cancel</a>
+                }
+                else
+                {
+                    <input type="submit" class="btn btn-primary" formaction="/Maintenance/updateToBeDelivred/@ViewData["mainId"]" value="Save"
+                           formmethod="post" />
+
+                    <input type="submit" name="deliver" class="btn btn-success" value="Delivered" id="deliver"
+                           formaction="/Maintenance/DeliverMaintenanceRequest/@ViewData["mainId"]" formmethod="post" />
+
+                    <input type="submit" class="btn btn-info" formaction="/Report/ReparingCheq/@ViewData["mainId"]" value="Print Recipt"
+                           formmethod="post" />
+
+                    <input type="submit" class="btn btn-dark" formaction="/Report/TechnicalReport/@ViewData["mainId"]" value="Technical Report"
+                           formmethod="post" />
+
+                    <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning form-group" style="margin-left:1%;">Cancel</a>
+                }
+
+            </div>
 
             </div>
             }
