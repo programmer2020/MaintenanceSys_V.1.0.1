@@ -1476,7 +1476,7 @@
     <Content Include="Views\Maintenance\GetRefundMaintenanceRequestDetails.cshtml" />
     <Content Include="Views\Maintenance\GetAllReturnedRequets.cshtml" />
     <Content Include="Views\Maintenance\GetReturnedRequets.cshtml" />
-    <Content Include="Views\Maintenance\ClientApproveMaintenanceRequest.cshtml" />
+    <Content Include="Views\Maintenance\Technical\ClientApproveMaintenanceRequest.cshtml" />
     <Content Include="Views\Maintenance\MaintenanceTechnicalReportActionsView.cshtml" />
     <Content Include="Views\Maintenance\MainteanceQualityCheck_ActionsView.cshtml" />
     <Content Include="Views\Maintenance\CheckingStartedViewActions.cshtml" />
@@ -1497,9 +1497,9 @@
     <Content Include="Views\Maintenance\Admin\Maintenance_ViewData.cshtml" />
     <Content Include="Views\Maintenance\GetAllMaintenanceComments.cshtml" />
     <Content Include="Views\Maintenance\GetCheckingStartedRequests.cshtml" />
-    <Content Include="Views\Maintenance\Maintennace_CheckingStarted_ActionView.cshtml" />
+    <Content Include="Views\Maintenance\Technical\Maintennace_CheckingStarted_ActionView.cshtml" />
     <Content Include="Views\Maintenance\GetUnderApprovalView.cshtml" />
-    <Content Include="Views\Maintenance\MaintennaceUnderApprovalActions.cshtml" />
+    <Content Include="Views\Maintenance\Admin\MaintennaceUnderApprovalActions.cshtml" />
     <Content Include="Views\Maintenance\GetAllUnderReparingRequests.cshtml" />
     <Content Include="Views\Maintenance\UnderReparingActionsView.cshtml" />
     <Content Include="Views\Maintenance\GetAllToBeDelivredMaintenanceRequestsView.cshtml" />
@@ -1521,6 +1521,19 @@
     <Content Include="Views\Maintenance\SuperAdmin\Maintenance_ViewData.cshtml" />
     <Content Include="Views\Maintenance\Supervisor\Maintenance_ViewData.cshtml" />
     <Content Include="Views\Maintenance\Technical\Maintenance_ViewData.cshtml" />
+    <Content Include="Views\Maintenance\Supervisor\Maintennace_Delivred_ActionView.cshtml" />
+    <Content Include="Views\Maintenance\Supervisor\Maintennace_CheckingStarted_ActionView.cshtml" />
+    <Content Include="Views\Maintenance\SuperAdmin\Maintennace_CheckingStarted_ActionView.cshtml" />
+    <Content Include="Views\Maintenance\Guset\Maintennace_CheckingStarted_ActionView.cshtml" />
+    <Content Include="Views\Maintenance\Admin\Maintennace_CheckingStarted_ActionView.cshtml" />
+    <Content Include="Views\Maintenance\Guset\MaintennaceUnderApprovalActions.cshtml" />
+    <Content Include="Views\Maintenance\SuperAdmin\MaintennaceUnderApprovalActions.cshtml" />
+    <Content Include="Views\Maintenance\Supervisor\MaintennaceUnderApprovalActions.cshtml" />
+    <Content Include="Views\Maintenance\Technical\MaintennaceUnderApprovalActions.cshtml" />
+    <Content Include="Views\Maintenance\Supervisor\ClientApproveMaintenanceRequest.cshtml" />
+    <Content Include="Views\Maintenance\SuperAdmin\ClientApproveMaintenanceRequest.cshtml" />
+    <Content Include="Views\Maintenance\Guset\ClientApproveMaintenanceRequest.cshtml" />
+    <Content Include="Views\Maintenance\Admin\ClientApproveMaintenanceRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

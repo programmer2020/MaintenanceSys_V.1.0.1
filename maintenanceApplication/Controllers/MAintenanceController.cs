@@ -88,7 +88,7 @@ namespace maintenanceApplication.Controllers
             _context.SaveChanges();
            
             return RedirectToAction("GetNewMaintenanceRequests");
-
+                
         }
         public ActionResult StartMaintenance(int id , MaintenanceModel maintenance)
         {
@@ -335,7 +335,26 @@ namespace maintenanceApplication.Controllers
             };
             ViewData["mainId"] = maintenanceEdit.Id;
 
-            return View("ClientApproveMaintenanceRequest", update_viewModel);
+            if (User.IsInRole("SuperAdmin"))
+            {
+                return View("~/Views/Maintenance/SuperAdmin/ClientApproveMaintenanceRequest.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Admin"))
+            {
+                return View("~/Views/Maintenance/Admin/ClientApproveMaintenanceRequest.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Supervisor"))
+            {
+                return View("~/Views/Maintenance/Supervisor/ClientApproveMaintenanceRequest.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Technical"))
+            {
+                return View("~/Views/Maintenance/Technical/ClientApproveMaintenanceRequest.cshtml", update_viewModel);
+            }
+            else
+            {
+                return View("~/Views/Maintenance/Guset/ClientApproveMaintenanceRequest.cshtml", update_viewModel);
+            }
         }
 
         //Under Reparing Acotions 
@@ -490,7 +509,27 @@ namespace maintenanceApplication.Controllers
                 maintenancestatus = _context.status.ToList()
             };
             ViewData["mainId"] = maintenanceEdit.Id;
-            return View("MaintennaceUnderApprovalActions", update_viewModel);
+
+            if (User.IsInRole("SuperAdmin"))
+            {
+                return View("~/Views/Maintenance/SuperAdmin/MaintennaceUnderApprovalActions.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Admin"))
+            {
+                return View("~/Views/Maintenance/Admin/MaintennaceUnderApprovalActions.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Supervisor"))
+            {
+                return View("~/Views/Maintenance/Supervisor/MaintennaceUnderApprovalActions.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Technical"))
+            {
+                return View("~/Views/Maintenance/Technical/MaintennaceUnderApprovalActions.cshtml", update_viewModel);
+            }
+            else
+            {
+                return View("~/Views/Maintenance/Guset/MaintennaceUnderApprovalActions.cshtml", update_viewModel);
+            }
         }
 
         //ApproveMaintencneRequest
@@ -569,7 +608,28 @@ namespace maintenanceApplication.Controllers
                 maintenancestatus = _context.status.ToList()
             };
             ViewData["mainId"] = maintenanceUnderChecking.Id;
-            return View("Maintennace_CheckingStarted_ActionView", underChecking_viewModel);
+
+            if (User.IsInRole("SuperAdmin"))
+            {
+                return View("~/Views/Maintenance/SuperAdmin/Maintennace_CheckingStarted_ActionView.cshtml", underChecking_viewModel);
+            }
+            else if (User.IsInRole("Admin"))
+            {
+                return View("~/Views/Maintenance/Admin/Maintennace_CheckingStarted_ActionView.cshtml", underChecking_viewModel);
+            }
+            else if (User.IsInRole("Supervisor"))
+            {
+                return View("~/Views/Maintenance/Supervisor/Maintennace_CheckingStarted_ActionView.cshtml", underChecking_viewModel);
+            }
+            else if (User.IsInRole("Technical"))
+            {
+                return View("~/Views/Maintenance/Technical/Maintennace_CheckingStarted_ActionView.cshtml", underChecking_viewModel);
+            }
+            else
+            {
+                return View("~/Views/Maintenance/Guset/Maintennace_CheckingStarted_ActionView.cshtml", underChecking_viewModel);
+            }
+
         }
 
         [HttpPost]

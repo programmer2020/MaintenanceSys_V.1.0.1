@@ -210,7 +210,6 @@ C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\bin\Microsoft.
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\maintenanceApplication.csprojAssemblyReference.cache
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\maintenanceApplication.Migrations._intiate.resources
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\maintenanceApplication.Migrations.remove_email.resources
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\maintenanceApplication.Resource.resources

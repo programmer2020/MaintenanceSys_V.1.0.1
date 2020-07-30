@@ -89,7 +89,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.maintenance.status.StatusName, "Status Name", htmlAttributes: new { @class = "control-label col-md-3" })
                 <div class="col-md-9">
-                    @Html.EditorFor(model => model.maintenance.status.StatusName, new { htmlAttributes = new { @class = "form-control" , disabled = "disabled" } })
+                    @Html.EditorFor(model => model.maintenance.Device_Model, new { htmlAttributes = new { @class = "form-control"  , disabled = "disabled"} })
 
                 </div>
             </div>
@@ -202,7 +202,8 @@
 
             <div class="col-md-12" style="margin-bottom:100px;margin-top:30px;margin-left:20%;">
                 <div class="cold-md-9">
-
+                    <input type="submit" class="btn btn-success" formaction="/Maintenance/Start_Checking/@ViewData["mainId"]" value="Start Checking"
+                           formmethod="post" />
                     <input type="submit" class="btn btn-danger" formaction="/Maintenance/ReturnMaintenanceRequest/@ViewData["mainId"]" value="Request For Return"
                            formmethod="post" />
 
