@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "CreteRole";
+}
+
+@using (Html.BeginForm("CreteRole", "Admin", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="col-md-9">
+        <div class="col-md-12">
+            <h4>Create a new Role.</h4>
+            <hr />
+        </div>
+
+        <label class="control-label col-md-2">Role Name</label>
+        <div class="col-md-7">
+            <input type="text" name="RoleName" class="form-control" />
+        </div>
+
+        <div class="form-group col-md-6">
+            <div class="col-md-offset-2 col-md-10" style="margin-top: 30px;margin-left: 80%;">
+                <input type="submit" class="btn btn-default" value="Register" />
+            </div>
+
+        </div>
+    </div>
+
+}
+

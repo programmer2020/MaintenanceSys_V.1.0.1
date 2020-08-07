@@ -1,0 +1,58 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<style>
+  
+    .main {
+        background: #C33232;
+        color: #fff;
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+        margin: 30px;
+        overflow: hidden;
+    }
+
+    .fa-5, h2 {
+        font-size: 12em;
+        font-weight: 600;
+        display: inline-block;
+        margin: 0;
+    }
+
+</style>
+
+<div class="col-md-12 main" style="height:600px;margin-top:-18px;">
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+        <span><i class="fa fa-chain-broken fa-5"></span></i><h2><span> Err</span><span>o</span><span>r</span></h2>
+        <h1>some thing went wroing...Please Try Again Or Contact with Support...</h1>
+        @*<span><button id="abutton" value="abc"><save class="this site" ></button></span>*@
+        @*<a style="color:white; font-weight:bold;margin-top:50px; font-size:20px;" href="/Maintenance/GetNewMaintenanceRequests">Go To Maintencne </a>*@
+    
+    <p>Error Is : @TempData["ex"]</p>
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        $('body').width(window.innerWidth).height(window.innerHeight);
+        $('#abutton').on('click', albert);
+
+        function albert() {
+            $('h1').html('<span>Oh</span> <span>gosh</span><span>,</span> <span>it</span> <span>crashed!</span><span>"!"+!</span>');
+            $('span, button').attr('style', 'cursor:move !important;')
+            $('body').jGravity({
+                target: 'span',
+                ignoreClass: 'dontMove',
+                weight: 25,
+                depth: 100,
+                drag: true
+            });
+            $('#abutton').off('click', albert);
+        }
+    });
+</script>

@@ -1,0 +1,122 @@
+﻿@model maintenanceApplication.Models.Maintenance.MaintenanceModel
+
+@{
+    ViewBag.Title = "GetReturnedRequets";
+}
+
+<div class="col-md-3"></div>
+<div class="col-md-9">
+    <h4>Maintenance Request Detail</h4>
+    <hr />
+    <dl class="dl-horizontal" style="line-height:2px;">
+        <dt class="text-primary">
+            Customer City
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerCity.CustomerCity)
+        </dd>
+
+        <dt class="text-primary">
+            Priority Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.priority.PriorityName)
+        </dd>
+
+        <dt class="text-primary">
+            Status Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status.StatusName)
+        </dd>
+
+        <dt class="text-primary">
+            Customer Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Name)
+        </dd>
+
+        <dt class="text-primary">
+            Customer Phone 1
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Phone_1)
+        </dd>
+
+        <dt class="text-primary">
+            Customer Phone 2
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Phone_2)
+        </dd>
+
+        <dt class="text-primary">
+            Customer Adress
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_Adress)
+        </dd>
+        <dt class="text-primary">
+            Device Serial Number
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Device_SerialNumber)
+        </dd>
+
+        <dt class="text-primary">
+            Device_Model
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Device_Model)
+        </dd>
+
+        <dt class="text-primary">
+            Accrssories
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Accrssories)
+        </dd>
+
+        <dt class="text-primary">
+            CreationDate
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+
+        <dt class="text-primary">
+            ClientRemarks
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientRemarks)
+        </dd>
+
+        @*<dt class="text-primary">
+            user_Id
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_Id)
+        </dd>*@
+
+    </dl>
+
+    <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning" style="margin-left:30%;margin-top:30px">Go Back 
+    </a>
+
+
+</div>
+
