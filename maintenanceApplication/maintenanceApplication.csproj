@@ -343,6 +343,7 @@
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\table.css" />
     <Content Include="Content\css\tabs.css" />
+    <Content Include="Content\css\typeahead.css" />
     <Content Include="Content\js\custom.js" />
     <Content Include="Content\js\custom.min.js" />
     <Content Include="Content\js\dashboard1.js" />
@@ -981,6 +982,8 @@
     <Content Include="html\scss\icons\weather-icons\less\css\variables-time.css" />
     <Content Include="html\scss\icons\weather-icons\less\css\variables-wind-names.css" />
     <Content Include="html\table-basic.html" />
+    <Content Include="Scripts\bloodhound.js" />
+    <Content Include="Scripts\bloodhound.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="assets\images\big\Thumbs.db" />
@@ -1424,6 +1427,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\typeahead.bundle.js" />
+    <Content Include="Scripts\typeahead.bundle.min.js" />
+    <Content Include="Scripts\typeahead.jquery.js" />
+    <Content Include="Scripts\typeahead.jquery.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1478,12 +1485,12 @@
     <Content Include="Views\Maintenance\GetReturnedRequets.cshtml" />
     <Content Include="Views\Maintenance\Technical\ClientApproveMaintenanceRequest.cshtml" />
     <Content Include="Views\Maintenance\MaintenanceTechnicalReportActionsView.cshtml" />
-    <Content Include="Views\Maintenance\MainteanceQualityCheck_ActionsView.cshtml" />
+    <Content Include="Views\Maintenance\Technical\MainteanceQualityCheck_ActionsView.cshtml" />
     <Content Include="Views\Maintenance\CheckingStartedViewActions.cshtml" />
     <Content Include="Views\Maintenance\GetAllApprovedRequests.cshtml" />
     <Content Include="Views\Maintenance\GetAllTechnicalReportMaintenanceRequests.cshtml" />
     <Content Include="Views\Maintenance\GetAllQualityMaintenanceRequestsView.cshtml" />
-    <Content Include="Views\Maintenance\Maintennace_Delivred_ActionView.cshtml" />
+    <Content Include="Views\Maintenance\Technical\Maintennace_Delivred_ActionView.cshtml" />
     <Content Include="Views\Maintenance\GetAllDelivredMaintenanceRequestView.cshtml" />
     <Content Include="Views\Maintenance\GetAllDelivredMaintenanceRequestActionView.cshtml" />
     <Content Include="Views\Maintenance\GetAllDeliveredMaintenanceRequestsView.cshtml" />
@@ -1501,9 +1508,9 @@
     <Content Include="Views\Maintenance\GetUnderApprovalView.cshtml" />
     <Content Include="Views\Maintenance\Admin\MaintennaceUnderApprovalActions.cshtml" />
     <Content Include="Views\Maintenance\GetAllUnderReparingRequests.cshtml" />
-    <Content Include="Views\Maintenance\UnderReparingActionsView.cshtml" />
+    <Content Include="Views\Maintenance\Technical\UnderReparingActionsView.cshtml" />
     <Content Include="Views\Maintenance\GetAllToBeDelivredMaintenanceRequestsView.cshtml" />
-    <Content Include="Views\Maintenance\MaintenanceToBeDelivredActionView.cshtml" />
+    <Content Include="Views\Maintenance\Technical\MaintenanceToBeDelivredActionView.cshtml" />
     <Content Include="Views\Maintenance\MaintenanceDelivredActionView.cshtml" />
     <Content Include="Views\Maintenance\AddMaintenanceComment.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
@@ -1534,6 +1541,21 @@
     <Content Include="Views\Maintenance\SuperAdmin\ClientApproveMaintenanceRequest.cshtml" />
     <Content Include="Views\Maintenance\Guset\ClientApproveMaintenanceRequest.cshtml" />
     <Content Include="Views\Maintenance\Admin\ClientApproveMaintenanceRequest.cshtml" />
+    <Content Include="Views\Maintenance\Supervisor\UnderReparingActionsView.cshtml" />
+    <Content Include="Views\Maintenance\SuperAdmin\UnderReparingActionsView.cshtml" />
+    <Content Include="Views\Maintenance\Guset\UnderReparingActionsView.cshtml" />
+    <Content Include="Views\Maintenance\Admin\UnderReparingActionsView.cshtml" />
+    <Content Include="Views\Maintenance\Supervisor\MainteanceQualityCheck_ActionsView.cshtml" />
+    <Content Include="Views\Maintenance\SuperAdmin\MainteanceQualityCheck_ActionsView.cshtml" />
+    <Content Include="Views\Maintenance\Guset\MainteanceQualityCheck_ActionsView.cshtml" />
+    <Content Include="Views\Maintenance\Admin\MainteanceQualityCheck_ActionsView.cshtml" />
+    <Content Include="Views\Maintenance\Supervisor\MaintenanceToBeDelivredActionView.cshtml" />
+    <Content Include="Views\Maintenance\SuperAdmin\MaintenanceToBeDelivredActionView.cshtml" />
+    <Content Include="Views\Maintenance\Guset\MaintenanceToBeDelivredActionView.cshtml" />
+    <Content Include="Views\Maintenance\Admin\MaintenanceToBeDelivredActionView.cshtml" />
+    <Content Include="Views\Maintenance\Guset\Maintennace_Delivred_ActionView.cshtml" />
+    <Content Include="Views\Maintenance\Admin\Maintennace_Delivred_ActionView.cshtml" />
+    <Content Include="Views\Maintenance\SuperAdmin\Maintennace_Delivred_ActionView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -9,6 +9,7 @@ namespace maintenanceApplication
         {
             filters.Add(new HandleErrorAttribute());
             filters.Add(new AuthorizeAttribute());
+            filters.Add(new ValidateInputAttribute(true));
             //filters.Add(new RequireHttpsAttribute()); 
         }
     }

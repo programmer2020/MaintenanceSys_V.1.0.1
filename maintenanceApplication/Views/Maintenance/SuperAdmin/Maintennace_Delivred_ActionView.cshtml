@@ -14,35 +14,35 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.maintenance.Customer_Name, htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
-                        @Html.EditorFor(model => model.maintenance.Customer_Name, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+                        @Html.EditorFor(model => model.maintenance.Customer_Name, new { htmlAttributes = new { @class = "form-control"} })
                     </div>
                 </div>
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.maintenance.Customer_Phone_1, htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
-                        @Html.EditorFor(model => model.maintenance.Customer_Phone_1, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+                        @Html.EditorFor(model => model.maintenance.Customer_Phone_1, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
                 </div>
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.maintenance.Customer_Phone_2, htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
-                        @Html.EditorFor(model => model.maintenance.Customer_Phone_2, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+                        @Html.EditorFor(model => model.maintenance.Customer_Phone_2, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
                 </div>
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.maintenance.Customer_Adress, htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
-                        @Html.EditorFor(model => model.maintenance.Customer_Adress, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+                        @Html.EditorFor(model => model.maintenance.Customer_Adress, new { htmlAttributes = new { @class = "form-control"} })
                     </div>
                 </div>
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.maintenance.CustomerCity.CustomerCity, htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
-                        @Html.EditorFor(model => model.maintenance.CustomerCity.CustomerCity, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+                        @Html.EditorFor(model => model.maintenance.CustomerCity.CustomerCity, new { htmlAttributes = new { @class = "form-control"} })
                     </div>
                 </div>
 
@@ -51,42 +51,42 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.maintenance.Device_SerialNumber, htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
-                        @Html.EditorFor(model => model.maintenance.Device_SerialNumber, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+                        @Html.EditorFor(model => model.maintenance.Device_SerialNumber, new { htmlAttributes = new { @class = "form-control"} })
                     </div>
                 </div>
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.maintenance.Device_Model, htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
-                        @Html.EditorFor(model => model.maintenance.Device_Model, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+                        @Html.EditorFor(model => model.maintenance.Device_Model, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
                 </div>
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.maintenance.Accrssories, htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
-                        @Html.EditorFor(model => model.maintenance.Accrssories, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+                        @Html.EditorFor(model => model.maintenance.Accrssories, new { htmlAttributes = new { @class = "form-control"} })
                     </div>
                 </div>
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.maintenance.ClientRemarks, htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
-                        @Html.TextAreaFor(model => model.maintenance.ClientRemarks, new { @class = "form-control", @style = "height:200px;", disabled = "disabled" })
+                        @Html.TextAreaFor(model => model.maintenance.ClientRemarks, new { @class = "form-control", @style = "height:200px;" })
                     </div>
                 </div>
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.maintenance.TechnicalReport, htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
-                        @Html.TextAreaFor(model => model.maintenance.TechnicalReport, new { @class = "form-control", @style = "height:200px;", disabled = "disabled" })
+                        @Html.TextAreaFor(model => model.maintenance.TechnicalReport, new { @class = "form-control", @style = "height:200px;" })
                     </div>
                 </div>
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.maintenance.Recommendations, htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
-                        @Html.TextAreaFor(model => model.maintenance.Recommendations, new { @class = "form-control", @style = "height:200px;", disabled = "disabled" })
+                        @Html.TextAreaFor(model => model.maintenance.Recommendations, new { @class = "form-control", @style = "height:200px;"})
                     </div>
                 </div>
 
@@ -225,25 +225,6 @@
 
                 <div class="form-group" style="margin-left:15%;">
                     <div class="col-md-12">
-                        @if (User.IsInRole(RolesName.Supervisor))
-                        {
-
-                            <input type="submit" class="btn btn-success" formaction="/Report/ReparingCheq/@ViewData["mainId"]" value="Print Recipt"
-                                   formmethod="post" />
-
-                            <input type="submit" class="btn btn-warning" formaction="/Report/TechnicalReport/@ViewData["mainId"]" value="Technical Report"
-                                   formmethod="post" />
-
-                            <input type="submit" class="btn btn-info" formaction="/Report/ReparingCheq/@ViewData["mainId"]" value="Print Recipt"
-                                   formmethod="post" />
-
-                            <input type="submit" class="btn btn-dark" formaction="/Report/TechnicalReport/@ViewData["mainId"]" value="Technical Report"
-                                   formmethod="post" />
-
-                            <a href="/Maintenance/GetNewMaintenanceRequests" class=" btn btn-danger">Cancel</a>
-                        }
-                        else
-                        {
                             <input type="submit" class="btn btn-primary" formaction="/Maintenance/updateDelivred/@ViewData["mainId"]" value="Save"
                                    formmethod="post" />
 
@@ -260,7 +241,6 @@
                                    formmethod="post" />
 
                             <a href="/Maintenance/GetNewMaintenanceRequests" class=" btn btn-danger">Cancel</a>
-                        }
                     </div>
                 </div>
 

@@ -24,15 +24,15 @@
 
 </style>
 
-<div class="col-md-12 main" style="height:600px;margin-top:-18px;">
+<div class="col-md-9 main" style="height:600px;">
     <div class="col-md-2"></div>
-    <div class="col-md-10">
+    <div class="col-md-8" style="margin-top:20px;">
         <span><i class="fa fa-chain-broken fa-5"></span></i><h2><span> Err</span><span>o</span><span>r</span></h2>
         <h1>some thing went wroing...Please Try Again Or Contact with Support...</h1>
         @*<span><button id="abutton" value="abc"><save class="this site" ></button></span>*@
         @*<a style="color:white; font-weight:bold;margin-top:50px; font-size:20px;" href="/Maintenance/GetNewMaintenanceRequests">Go To Maintencne </a>*@
     
-    <p>Error Is : @TempData["ex"]</p>
+    <p style="color:#FFF;">Error Is : @*@Model.Exception.Message*@ </p>
     </div>
 </div>
 

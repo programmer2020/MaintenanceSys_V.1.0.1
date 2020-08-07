@@ -225,3 +225,4 @@ C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\bin\Glimpse.As
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\bin\Glimpse.Core.dll
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\bin\Glimpse.EF6.dll
 C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\bin\Glimpse.Mvc5.dll
+C:\Users\mohamed\Desktop\MaintenanceSystem\maintenanceApplication\obj\Release\maintenanceApplication.csprojAssemblyReference.cache

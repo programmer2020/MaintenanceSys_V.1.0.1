@@ -75,8 +75,19 @@ namespace maintenanceApplication
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             if (!roleManager.RoleExists("SuperAdmin"))
             {
-                var role = new IdentityRole("SuperAdmin");
-                roleManager.Create(role);
+                //Create All Needed Roles On Applcation Starts 
+                //var SuperAdmin = new IdentityRole("SuperAdmin");
+                //var Anymoumus = new IdentityRole("Anymoumus");
+                //var Technical = new IdentityRole("Technical");
+                //var Supervisor = new IdentityRole("Supervisor");
+                //var Admin = new IdentityRole("Admin");
+
+                //roleManager.Create(SuperAdmin); 
+                //roleManager.Create(Anymoumus); 
+                //roleManager.Create(Technical); 
+                //roleManager.Create(Supervisor); 
+                //roleManager.Create(Admin); 
+
 
                 //Create Default user 
                 var user = new ApplicationUser();

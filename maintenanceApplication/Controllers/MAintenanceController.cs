@@ -32,7 +32,6 @@ namespace maintenanceApplication.Controllers
             ViewData["commentList"] = allComments;
         }
 
-
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
@@ -69,6 +68,15 @@ namespace maintenanceApplication.Controllers
             }
 
         }
+
+
+        public JsonResult GetAllMaintenanceRequests()
+        {
+            var maintenance_requests = _context.maintenance.Where(x=>x.isDeleted == false);
+            return Json(maintenance_requests); 
+
+        }
+
 
         //Approve Under checked Request
         public ActionResult Checked_Done(MaintenanceModel maintenance)
@@ -302,7 +310,6 @@ namespace maintenanceApplication.Controllers
 
         }
 
-
         //Edit Maintenance Requests 
         public ActionResult EditUnderCheckMaintenance(int id)
         {
@@ -372,7 +379,27 @@ namespace maintenanceApplication.Controllers
             };
             ViewData["mainId"] = maintenanceEdit.Id;
 
-            return View("UnderReparingActionsView", update_viewModel);
+            if (User.IsInRole("SuperAdmin"))
+            {
+                return View("~/Views/Maintenance/SuperAdmin/UnderReparingActionsView.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Admin"))
+            {
+                return View("~/Views/Maintenance/Admin/UnderReparingActionsView.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Supervisor"))
+            {
+                return View("~/Views/Maintenance/Supervisor/UnderReparingActionsView.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Technical"))
+            {
+                return View("~/Views/Maintenance/Technical/UnderReparingActionsView.cshtml", update_viewModel);
+            }
+            else
+            {
+                return View("~/Views/Maintenance/Guset/UnderReparingActionsView.cshtml", update_viewModel);
+            }
+
         }
 
         [HttpPost]
@@ -469,7 +496,6 @@ namespace maintenanceApplication.Controllers
             return RedirectToAction("GetNewMaintenanceRequests");
         }
 
-
         //GoToUnderApproval Change Request Status
         public ActionResult GoToUnderApproval(int id)
         {
@@ -535,6 +561,7 @@ namespace maintenanceApplication.Controllers
         //ApproveMaintencneRequest
         public ActionResult Maintennace_Approve_Request_Action(int id)
         {
+            @ViewData["mainId"] = id;
             var maintenanceChecked = _context.maintenance.SingleOrDefault(x => x.Id == id);
             var maintenanceStatus = _context.status.SingleOrDefault(x => x.StatusName == "Approved");
             maintenanceChecked.MaintenanceStatusModelId = maintenanceStatus.Id;
@@ -785,7 +812,29 @@ namespace maintenanceApplication.Controllers
                 maintenancestatus = _context.status.ToList()
             };
             ViewData["mainId"] = maintenanceDelivred.Id;
-            return View("Maintennace_Delivred_ActionView", update_viewModel);
+
+
+            if (User.IsInRole("SuperAdmin"))
+            {
+                return View("~/Views/Maintenance/SuperAdmin/Maintennace_Delivred_ActionView.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Admin"))
+            {
+                return View("~/Views/Maintenance/Admin/Maintennace_Delivred_ActionView.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Supervisor"))
+            {
+                return View("~/Views/Maintenance/Supervisor/Maintennace_Delivred_ActionView.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Technical"))
+            {
+                return View("~/Views/Maintenance/Technical/Maintennace_Delivred_ActionView.cshtml", update_viewModel);
+            }
+            else
+            {
+                return View("~/Views/Maintenance/Guset/Maintennace_Delivred_ActionView.cshtml", update_viewModel);
+            }
+
         }
 
         [HttpPost]
@@ -824,15 +873,22 @@ namespace maintenanceApplication.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult CreateNewMaintenanceRequest(MaintenanceModel maintenance)
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return View("MaintenanceForm", new MaintenanceCreteViewModel());
+                }
+
                 MaintenanceStatusModel maintenanceStatus = new MaintenanceStatusModel();
-                MaintenancePriorityModel priority = new MaintenancePriorityModel();
-                priority = _context.priority.SingleOrDefault(x => x.PriorityName == "Normal");
-                maintenanceStatus = _context.status.SingleOrDefault(x => x.StatusName == "New Request");
+                    MaintenancePriorityModel priority = new MaintenancePriorityModel();
+
+                    priority = _context.priority.SingleOrDefault(x => x.PriorityName == "Normal");
+                    maintenanceStatus = _context.status.SingleOrDefault(x => x.StatusName == "New Request");
+
                 maintenance.CreationDate = DateTime.UtcNow;
                 maintenance.MaintenanceStatusModelId = maintenanceStatus.Id;
                 if (maintenance.MaintenancePriorityModelId == 0 || maintenance.MaintenancePriorityModelId == null)
@@ -841,36 +897,23 @@ namespace maintenanceApplication.Controllers
                     maintenance.TechnicalReport = "No Technical Report Yet";
                 if (maintenance.Recommendations == "" || maintenance.Recommendations == null)
                     maintenance.Recommendations = "No Recommendations Yet";
-              maintenance.userName = User.Identity.Name; 
-              _context.maintenance.Add(maintenance);
-              _context.SaveChanges();
+                maintenance.userName = User.Identity.Name;
+                _context.maintenance.Add(maintenance);
+                _context.SaveChanges();
 
                 int mainId = maintenance.Id;
-                var maintennaceCheck = _context.maintenance.SingleOrDefault(x=>x.Id == mainId);
+                var maintennaceCheck = _context.maintenance.SingleOrDefault(x => x.Id == mainId);
                 string new_DeviceNumber = maintennaceCheck.Device_SerialNumber;
 
-                var maintenanceCheckSerial  = _context.maintenance.Where(x => x.Device_SerialNumber == new_DeviceNumber).ToList();
+                var maintenanceCheckSerial = _context.maintenance.Where(x => x.Device_SerialNumber == new_DeviceNumber).ToList();
 
                 if (maintenanceCheckSerial.Count > 1)
                 {
-                    maintennaceCheck.isRepeated = true; 
-                } 
+                    maintennaceCheck.isRepeated = true;
+                }
 
                 _context.maintenance.AddOrUpdate(maintennaceCheck);
                 _context.SaveChanges();
-
-
-                ////maintenance.user_Id = User.Identity.GetUserId(); 
-                //string userId = User.Identity.GetUserId();
-                //    //maintenance.user_Id = userId;
-                //    //maintenance.user_Id = User.Identity.GetUserId();
-
-                //    int mainId = maintenance.Id;
-                //    var getMaintenance = _context.maintenance.Single(x => x.Id == mainId);
-                //    getMaintenance.user_Id = userId;
-                //    _context.maintenance.AddOrUpdate(getMaintenance);
-                //    _context.SaveChanges();
-
 
             }
             catch (Exception ex)
@@ -879,7 +922,6 @@ namespace maintenanceApplication.Controllers
             }
             return RedirectToAction("GetNewMaintenanceRequests", "Maintenance");
         }
-
 
         // Maintenance_Technical_Report 
         [HttpGet]
@@ -927,7 +969,6 @@ namespace maintenanceApplication.Controllers
 
         }
 
-
         // Maintenance_Quality_Check
         [HttpGet]
         public async Task<ActionResult> GetAllMaintenance_Quality_Check()
@@ -951,7 +992,28 @@ namespace maintenanceApplication.Controllers
                 maintenancestatus = _context.status.ToList()
             };
             ViewData["mainId"] = maintenanceEdit.Id;
-            return View("MainteanceQualityCheck_ActionsView", update_viewModel);
+
+            if (User.IsInRole("SuperAdmin"))
+            {
+                return View("~/Views/Maintenance/SuperAdmin/MainteanceQualityCheck_ActionsView.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Admin"))
+            {
+                return View("~/Views/Maintenance/Admin/MainteanceQualityCheck_ActionsView.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Supervisor"))
+            {
+                return View("~/Views/Maintenance/Supervisor/MainteanceQualityCheck_ActionsView.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Technical"))
+            {
+                return View("~/Views/Maintenance/Technical/MainteanceQualityCheck_ActionsView.cshtml", update_viewModel);
+            }
+            else
+            {
+                return View("~/Views/Maintenance/Guset/MainteanceQualityCheck_ActionsView.cshtml", update_viewModel);
+            }
+
         }
 
 
@@ -1017,7 +1079,6 @@ namespace maintenanceApplication.Controllers
             await Task.Delay(0);
             return View("GetAllToBeDelivredMaintenanceRequestsView", getAlldeliveredRequests);
         }
-
       
         public ActionResult MaintenanceToBeDeliveredActions(int id)
         {
@@ -1030,9 +1091,30 @@ namespace maintenanceApplication.Controllers
                 maintenancestatus = _context.status.ToList()
             };
             ViewData["mainId"] = maintenanceEdit.Id;
-            return View("MaintenanceToBeDelivredActionView", update_viewModel);
-        }
 
+
+            if (User.IsInRole("SuperAdmin"))
+            {
+                return View("~/Views/Maintenance/SuperAdmin/MaintenanceToBeDelivredActionView.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Admin"))
+            {
+                return View("~/Views/Maintenance/Admin/MaintenanceToBeDelivredActionView.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Supervisor"))
+            {
+                return View("~/Views/Maintenance/Supervisor/MaintenanceToBeDelivredActionView.cshtml", update_viewModel);
+            }
+            else if (User.IsInRole("Technical"))
+            {
+                return View("~/Views/Maintenance/Technical/MaintenanceToBeDelivredActionView.cshtml", update_viewModel);
+            }
+            else
+            {
+                return View("~/Views/Maintenance/Guset/MaintenanceToBeDelivredActionView.cshtml", update_viewModel);
+            }
+
+        }
 
         public ActionResult MaintenanceToBeDeliveredDone(int id)
         {
@@ -1127,7 +1209,6 @@ namespace maintenanceApplication.Controllers
             return RedirectToAction("GetNewMaintenanceRequests");
 
         }
-
 
 
     }

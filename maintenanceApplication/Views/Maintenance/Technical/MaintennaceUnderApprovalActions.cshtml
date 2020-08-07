@@ -67,7 +67,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.maintenance.Accrssories, htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
-                        @Html.EditorFor(model => model.maintenance.Accrssories, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.TextAreaFor(model => model.maintenance.Accrssories, new { @class = "form-control", @style = "height : 200px" , disabled="disabled" })
                     </div>
                 </div>
 
@@ -118,85 +118,85 @@
 
                 @if (Model.maintenance.CreationDate != null)
                 {
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.maintenance.CreationDate, htmlAttributes: new { @class = "control-label col-md-3" })
-                        <div class="col-md-9">
-                            @Html.EditorFor(model => model.maintenance.CreationDate, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.maintenance.CreationDate, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.maintenance.CreationDate, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
+                </div>
                 }
 
 
                 @if (Model.maintenance.StartCheckingDate != null)
                 {
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.maintenance.StartCheckingDate, htmlAttributes: new { @class = "control-label col-md-3" })
-                        <div class="col-md-9">
-                            @Html.EditorFor(model => model.maintenance.StartCheckingDate, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.maintenance.StartCheckingDate, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.maintenance.StartCheckingDate, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
+                </div>
                 }
 
                 @if (Model.maintenance.CheckCompleted_Date != null)
                 {
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.maintenance.CheckCompleted_Date, htmlAttributes: new { @class = "control-label col-md-3" })
-                        <div class="col-md-9">
-                            @Html.EditorFor(model => model.maintenance.CheckCompleted_Date, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.maintenance.CheckCompleted_Date, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.maintenance.CheckCompleted_Date, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
+                </div>
                 }
 
                 @if (Model.maintenance.StartReparingDate != null)
                 {
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.maintenance.StartReparingDate, htmlAttributes: new { @class = "control-label col-md-3" })
-                        <div class="col-md-9">
-                            @Html.EditorFor(model => model.maintenance.StartReparingDate, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.maintenance.StartReparingDate, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.maintenance.StartReparingDate, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
+                </div>
                 }
 
 
                 @if (Model.maintenance.Actual_Repair_Date != null)
                 {
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.maintenance.Actual_Repair_Date, htmlAttributes: new { @class = "control-label col-md-3" })
-                        <div class="col-md-9">
-                            @Html.EditorFor(model => model.maintenance.Actual_Repair_Date, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.maintenance.Actual_Repair_Date, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.maintenance.Actual_Repair_Date, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
+                </div>
                 }
 
                 @if (Model.maintenance.QualityRejectDate != null)
                 {
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.maintenance.QualityRejectDate, htmlAttributes: new { @class = "control-label col-md-3" })
-                        <div class="col-md-9">
-                            @Html.EditorFor(model => model.maintenance.QualityRejectDate, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.maintenance.QualityRejectDate, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.maintenance.QualityRejectDate, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
+                </div>
                 }
 
                 @if (Model.maintenance.QualityApprovedDate != null)
                 {
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.maintenance.QualityApprovedDate, htmlAttributes: new { @class = "control-label col-md-3" })
-                        <div class="col-md-9">
-                            @Html.EditorFor(model => model.maintenance.QualityApprovedDate, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.maintenance.QualityApprovedDate, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.maintenance.QualityApprovedDate, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
+                </div>
                 }
 
 
                 @if (Model.maintenance.Deliver_Date != null)
                 {
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.maintenance.Deliver_Date, htmlAttributes: new { @class = "control-label col-md-3" })
-                        <div class="col-md-9">
-                            @Html.EditorFor(model => model.maintenance.Deliver_Date, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.maintenance.Deliver_Date, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.maintenance.Deliver_Date, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
+                </div>
                 }
 
 
@@ -215,22 +215,21 @@
                 @Html.HiddenFor(model => model.maintenance.TechnicalReport)
                 @Html.HiddenFor(model => model.maintenance.Recommendations)
 
-                <div class="col-md-12" style="margin-bottom:100px;margin-top:30px;margin-left:20%;">
-                    <div class="cold-md-9">
-                        <input type="submit" class="btn btn-success" formaction="/Maintenance/Start_Checking/@ViewData["mainId"]" value="Start Checking"
-                               formmethod="post" />
-                        <input type="submit" class="btn btn-danger" formaction="/Maintenance/ReturnMaintenanceRequest/@ViewData["mainId"]" value="Request For Return"
-                               formmethod="post" />
 
-                        <input type="submit" class="btn btn-primary" formaction="/Report/ReparingCheq/@ViewData["mainId"]" value="Print Recipt"
-                               formmethod="post" />
+                <div class="col-md-12" style="margin-bottom:100px;margin-top:30px;">
+                    <div class="col-md-3"></div>
+                    <input type="submit" class="btn btn-success" formaction="/Maintenance/Maintennace_Approve_Request_Action/@ViewData["mainId"]" value="Approve"
+                           formmethod="post" />
+                    <input type="submit" class="btn btn-danger" formaction="/Maintenance/Maintennace_Rject_Request_Action/@ViewData["mainId"]" value="Reject"
+                           formmethod="post" />
+                    <input type="submit" class="btn btn-info" formaction="/Report/ReparingCheq/@ViewData[" mainId"]" value="Print Recipt"
+                           formmethod="post" />
+                    <input type="submit" class="btn btn-dark" formaction="/Report/TechnicalReport/@ViewData[" mainId"]" value="Technical Report"
+                           formmethod="post" />
+                    <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning form-group" style="margin-left:1%;">Cancel</a>
 
-                        <input type="submit" class="btn btn-dark" formaction="/Report/TechnicalReport/@ViewData["mainId"]" value="Technical Report"
-                               formmethod="post" />
-                        <a href="/Maintenance/GetNewMaintenanceRequests" class="btn btn-warning ">Cancel</a>
-
-                    </div>
                 </div>
+
 
             </div>
 

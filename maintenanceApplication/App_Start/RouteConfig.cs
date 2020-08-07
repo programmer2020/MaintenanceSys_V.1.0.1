@@ -14,7 +14,6 @@ namespace maintenanceApplication
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapMvcAttributeRoutes(); 
 
-
             //routes.MapRoute(
             //    "MaintenanceRequestsByDate",
             //    "Maintenance/requests/{year}/{month}",

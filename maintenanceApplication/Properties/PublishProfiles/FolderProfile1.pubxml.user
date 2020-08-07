@@ -392,7 +392,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/Ar/maintenanceApplication.resources.dll">
-      <publishTime>07/26/2020 02:32:54</publishTime>
+      <publishTime>06/08/2020 11:20:22</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/23/2017 13:15:18</publishTime>
@@ -416,10 +416,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/04/2014 11:55:28</publishTime>
     </File>
     <File Include="bin/maintenanceApplication.dll">
-      <publishTime>07/26/2020 02:32:54</publishTime>
+      <publishTime>06/08/2020 11:20:22</publishTime>
     </File>
     <File Include="bin/maintenanceApplication.pdb">
-      <publishTime>07/26/2020 02:32:54</publishTime>
+      <publishTime>06/08/2020 11:20:22</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>11/25/2019 10:57:50</publishTime>
@@ -455,7 +455,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/18/2019 20:50:50</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
-      <publishTime>01/18/2019 20:51:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
       <publishTime>01/18/2019 20:50:50</publishTime>
@@ -687,6 +687,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="Content/css/tabs.css">
       <publishTime>06/12/2020 15:37:10</publishTime>
+    </File>
+    <File Include="Content/css/typeahead.css">
+      <publishTime>08/01/2020 20:07:34</publishTime>
     </File>
     <File Include="Content/js/custom.js">
       <publishTime>12/04/2018 15:23:52</publishTime>
@@ -3817,6 +3820,12 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="html/table-basic.html">
       <publishTime>05/31/2020 02:23:50</publishTime>
     </File>
+    <File Include="Scripts/bloodhound.js">
+      <publishTime>08/01/2020 17:44:53</publishTime>
+    </File>
+    <File Include="Scripts/bloodhound.min.js">
+      <publishTime>08/01/2020 17:44:52</publishTime>
+    </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>05/29/2020 04:22:56</publishTime>
     </File>
@@ -3855,6 +3864,18 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="Scripts/modernizr-2.8.3.js">
       <publishTime>05/29/2020 04:23:20</publishTime>
+    </File>
+    <File Include="Scripts/typeahead.bundle.js">
+      <publishTime>08/01/2020 17:44:51</publishTime>
+    </File>
+    <File Include="Scripts/typeahead.bundle.min.js">
+      <publishTime>08/01/2020 17:44:51</publishTime>
+    </File>
+    <File Include="Scripts/typeahead.jquery.js">
+      <publishTime>08/01/2020 17:44:51</publishTime>
+    </File>
+    <File Include="Scripts/typeahead.jquery.min.js">
+      <publishTime>08/01/2020 17:44:50</publishTime>
     </File>
     <File Include="Views/Account/ConfirmEmail.cshtml">
       <publishTime>05/29/2020 04:23:24</publishTime>
@@ -3940,6 +3961,33 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Maintenance/AddMaintenanceComment.cshtml">
       <publishTime>06/23/2020 21:03:48</publishTime>
     </File>
+    <File Include="Views/Maintenance/Admin/ClientApproveMaintenanceRequest.cshtml">
+      <publishTime>07/30/2020 06:27:27</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Admin/GetMaintenanceRequests.cshtml">
+      <publishTime>07/29/2020 11:37:12</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Admin/MainteanceQualityCheck_ActionsView.cshtml">
+      <publishTime>07/30/2020 15:32:07</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Admin/MaintenanceToBeDelivredActionView.cshtml">
+      <publishTime>07/30/2020 16:52:43</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Admin/Maintenance_ViewData.cshtml">
+      <publishTime>07/29/2020 12:18:26</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Admin/MaintennaceUnderApprovalActions.cshtml">
+      <publishTime>07/30/2020 05:53:16</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Admin/Maintennace_CheckingStarted_ActionView.cshtml">
+      <publishTime>07/30/2020 05:33:54</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Admin/Maintennace_Delivred_ActionView.cshtml">
+      <publishTime>07/31/2020 20:16:48</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Admin/UnderReparingActionsView.cshtml">
+      <publishTime>07/30/2020 15:19:16</publishTime>
+    </File>
     <File Include="Views/Maintenance/CheckingStartedViewActions.cshtml">
       <publishTime>06/22/2020 20:27:50</publishTime>
     </File>
@@ -3994,6 +4042,33 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Maintenance/GetUnderApprovalView.cshtml">
       <publishTime>07/08/2020 16:26:54</publishTime>
     </File>
+    <File Include="Views/Maintenance/Guset/ClientApproveMaintenanceRequest.cshtml">
+      <publishTime>07/30/2020 06:23:12</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Guset/GetMaintenanceRequests.cshtml">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Guset/MainteanceQualityCheck_ActionsView.cshtml">
+      <publishTime>07/30/2020 15:49:48</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Guset/MaintenanceToBeDelivredActionView.cshtml">
+      <publishTime>07/30/2020 17:44:35</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Guset/Maintenance_ViewData.cshtml">
+      <publishTime>07/29/2020 16:54:53</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Guset/MaintennaceUnderApprovalActions.cshtml">
+      <publishTime>08/06/2020 21:56:34</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Guset/Maintennace_CheckingStarted_ActionView.cshtml">
+      <publishTime>07/30/2020 05:48:39</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Guset/Maintennace_Delivred_ActionView.cshtml">
+      <publishTime>01/08/2020 00:09:43</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Guset/UnderReparingActionsView.cshtml">
+      <publishTime>07/30/2020 15:30:13</publishTime>
+    </File>
     <File Include="Views/Maintenance/MainteanceQualityCheck_ActionsView.cshtml">
       <publishTime>07/26/2020 02:20:41</publishTime>
     </File>
@@ -4001,7 +4076,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/28/2020 01:55:40</publishTime>
     </File>
     <File Include="Views/Maintenance/MaintenanceForm.cshtml">
-      <publishTime>07/03/2020 17:07:14</publishTime>
+      <publishTime>06/08/2020 11:12:16</publishTime>
     </File>
     <File Include="Views/Maintenance/MaintenanceTechnicalReport2.cshtml">
       <publishTime>06/07/2020 04:56:06</publishTime>
@@ -4032,6 +4107,87 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="Views/Maintenance/Maintennace_Delivred_ActionView.cshtml">
       <publishTime>07/26/2020 02:22:13</publishTime>
+    </File>
+    <File Include="Views/Maintenance/SuperAdmin/ClientApproveMaintenanceRequest.cshtml">
+      <publishTime>07/30/2020 06:23:07</publishTime>
+    </File>
+    <File Include="Views/Maintenance/SuperAdmin/GetMaintenanceRequests.cshtml">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Views/Maintenance/SuperAdmin/MainteanceQualityCheck_ActionsView.cshtml">
+      <publishTime>07/30/2020 15:31:47</publishTime>
+    </File>
+    <File Include="Views/Maintenance/SuperAdmin/MaintenanceToBeDelivredActionView.cshtml">
+      <publishTime>07/30/2020 17:01:39</publishTime>
+    </File>
+    <File Include="Views/Maintenance/SuperAdmin/Maintenance_ViewData.cshtml">
+      <publishTime>07/29/2020 12:11:06</publishTime>
+    </File>
+    <File Include="Views/Maintenance/SuperAdmin/MaintennaceUnderApprovalActions.cshtml">
+      <publishTime>06/08/2020 11:59:35</publishTime>
+    </File>
+    <File Include="Views/Maintenance/SuperAdmin/Maintennace_CheckingStarted_ActionView.cshtml">
+      <publishTime>07/30/2020 05:28:28</publishTime>
+    </File>
+    <File Include="Views/Maintenance/SuperAdmin/Maintennace_Delivred_ActionView.cshtml">
+      <publishTime>01/08/2020 00:12:22</publishTime>
+    </File>
+    <File Include="Views/Maintenance/SuperAdmin/UnderReparingActionsView.cshtml">
+      <publishTime>07/30/2020 15:18:49</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Supervisor/ClientApproveMaintenanceRequest.cshtml">
+      <publishTime>07/30/2020 06:36:47</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Supervisor/GetMaintenanceRequests.cshtml">
+      <publishTime>07/29/2020 11:37:44</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Supervisor/MainteanceQualityCheck_ActionsView.cshtml">
+      <publishTime>07/30/2020 15:41:09</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Supervisor/MaintenanceToBeDelivredActionView.cshtml">
+      <publishTime>07/30/2020 16:55:40</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Supervisor/Maintenance_ViewData.cshtml">
+      <publishTime>07/29/2020 12:30:33</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Supervisor/MaintennaceUnderApprovalActions.cshtml">
+      <publishTime>08/06/2020 21:56:36</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Supervisor/Maintennace_CheckingStarted_ActionView.cshtml">
+      <publishTime>07/30/2020 05:38:46</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Supervisor/Maintennace_Delivred_ActionView.cshtml">
+      <publishTime>01/08/2020 00:34:12</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Supervisor/UnderReparingActionsView.cshtml">
+      <publishTime>07/30/2020 15:23:11</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Technical/ClientApproveMaintenanceRequest.cshtml">
+      <publishTime>07/30/2020 06:39:45</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Technical/GetMaintenanceRequests.cshtml">
+      <publishTime>07/29/2020 11:37:52</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Technical/MainteanceQualityCheck_ActionsView.cshtml">
+      <publishTime>07/30/2020 15:46:59</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Technical/MaintenanceToBeDelivredActionView.cshtml">
+      <publishTime>07/30/2020 17:03:11</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Technical/Maintenance_ViewData.cshtml">
+      <publishTime>07/29/2020 12:29:15</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Technical/MaintennaceUnderApprovalActions.cshtml">
+      <publishTime>08/06/2020 21:56:18</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Technical/Maintennace_CheckingStarted_ActionView.cshtml">
+      <publishTime>07/30/2020 05:43:45</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Technical/Maintennace_Delivred_ActionView.cshtml">
+      <publishTime>01/08/2020 00:51:05</publishTime>
+    </File>
+    <File Include="Views/Maintenance/Technical/UnderReparingActionsView.cshtml">
+      <publishTime>07/30/2020 15:24:47</publishTime>
     </File>
     <File Include="Views/Maintenance/UnderReparingActionsView.cshtml">
       <publishTime>07/26/2020 00:48:30</publishTime>
@@ -4085,7 +4241,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/29/2020 04:23:24</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>07/22/2020 14:50:54</publishTime>
+      <publishTime>08/01/2020 23:12:42</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutLogin.cshtml">
       <publishTime>07/21/2020 18:16:51</publishTime>
@@ -4103,7 +4259,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/29/2020 04:22:44</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/26/2020 15:42:38</publishTime>
+      <publishTime>08/05/2020 23:58:35</publishTime>
     </File>
   </ItemGroup>
 </Project>

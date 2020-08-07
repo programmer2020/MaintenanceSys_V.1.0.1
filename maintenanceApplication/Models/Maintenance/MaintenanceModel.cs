@@ -41,7 +41,6 @@ namespace maintenanceApplication.Models.Maintenance
         [MaxLength(250)]
         [Display(Name = "Device Serial Number")]
         [RegularExpression(@"(\S)+", ErrorMessage = "White space is not allowed")]
-        //[customeValidation]
         public string Device_SerialNumber { get; set; }
 
         [Required]
@@ -108,6 +107,7 @@ namespace maintenanceApplication.Models.Maintenance
         public bool isAccessoriesAvailable { get; set; }
 
         [Required]
+        [Range(1, Int32.MaxValue, ErrorMessage = "Must Select A Value")]
         public int MaintenanceCustomerCityModelId { get; set; }
         public MaintenanceCustomerCityModel CustomerCity { get; set; }
 
